@@ -4,23 +4,66 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public MovementJoyStick movementJoystick;
-    public float playerSpeed;
+
+    public float speed;
+    private float horizontalMove;
+    private bool moveRight;
+    private bool moveLeft;
     private Rigidbody2D rb;
-    // Start is called before the first frame update
-    void Start()
-    {
+    private Animator anim;
+    private Vector3 localScale;
+
+    void Start(){
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        anim.SetBool("isRunning",false);
+        anim.SetBool("isFalling",false);
+        moveLeft = false;
+        moveRight = false;
+
+        localScale = transform.localScale;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if(movementJoystick.joyStickVec.y != 0 ){
-            rb.velocity = new Vector2(movementJoystick.joyStickVec.x * playerSpeed, movementJoystick.joyStickVec.y * playerSpeed);
-        }
-        else{
-            rb.velocity = Vector2.zero;
+    void Update(){
+        Movement();
+    }
+
+    public void pointerDownLeft(){
+        moveLeft = true;
+        anim.SetBool("isRunning",true);
+        // anim.SetBool("isFalling",false);
+        localScale.x *= -1;
+        transform.localScale = localScale;
+        
+    }
+    public void pointerUpLeft(){
+        moveLeft = false;
+        anim.SetBool("isRunning",false);
+        localScale.x *= -1;
+        transform.localScale = localScale;
+    }   
+    public void pointerDownRight(){
+        anim.SetBool("isRunning",true);
+        moveRight = true;
+    }
+    public void pointerUpRight(){
+        anim.SetBool("isRunning",false);
+        moveRight = false;
+    }
+
+    void Movement(){
+        if(moveLeft){
+            horizontalMove = - speed;
+            
+        }else if(moveRight){
+            horizontalMove = speed;
+        }else{
+            horizontalMove = 0;
         }
     }
+    private void FixedUpdate(){
+        rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
+    }
+
+
 }
