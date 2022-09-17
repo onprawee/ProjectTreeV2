@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    private Rigidbody2D rb;
     public float speed;
     private float horizontalMove;
     private bool moveRight;
     private bool moveLeft;
-    private Rigidbody2D rb;
+    
     private Animator anim;
     private Vector3 localScale;
+    private float jumpSpeed = 8f;
+    bool isGrounded;
+    bool canDoubleJump;
+    public float delayBeforeDoubleJump;
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         anim.SetBool("isRunning",false);
         anim.SetBool("isFalling",false);
+        anim.SetBool("isJumping",false);
         moveLeft = false;
         moveRight = false;
 
@@ -51,6 +56,11 @@ public class Player : MonoBehaviour
         moveRight = false;
     }
 
+    public void pointerUpJump(){
+       
+        anim.SetBool("isFalling",true);
+    }
+
     void Movement(){
         if(moveLeft){
             horizontalMove = - speed;
@@ -61,6 +71,41 @@ public class Player : MonoBehaviour
             horizontalMove = 0;
         }
     }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+            canDoubleJump = false;
+            anim.SetBool("isFalling",false);
+            anim.SetBool("isJumping",false);
+            
+        }
+    }
+    public void jumpButton()
+    {
+
+        if(isGrounded)
+        {
+            isGrounded = false;
+            rb.velocity = Vector2.up * jumpSpeed;
+            Invoke("EnableDoubleJump", delayBeforeDoubleJump);
+            anim.SetBool("isJumping",true);
+        }
+        if (canDoubleJump)
+        {
+            rb.velocity = Vector2.up * jumpSpeed;
+            canDoubleJump = false;
+        }   
+
+    }
+ 
+    void EnableDoubleJump()
+        {
+            canDoubleJump = true;
+        }
+
+    
     private void FixedUpdate(){
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
     }
