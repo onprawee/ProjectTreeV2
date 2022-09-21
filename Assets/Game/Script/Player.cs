@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -28,42 +29,38 @@ public class Player : MonoBehaviour
 
         localScale = transform.localScale;
     }
-
     void Update(){
         Movement();
     }
-
     public void pointerDownLeft(){
         moveLeft = true;
         anim.SetBool("isRunning",true);
-        // anim.SetBool("isFalling",false);
-        localScale.x *= -1;
+        localScale.x = Mathf.Abs(localScale.x) * -1 ;
         transform.localScale = localScale;
-        
     }
     public void pointerUpLeft(){
         moveLeft = false;
         anim.SetBool("isRunning",false);
-        localScale.x *= -1;
-        transform.localScale = localScale;
+        //localScale.x *= -1; //หมุน
+        //transform.localScale = localScale;
     }   
     public void pointerDownRight(){
         anim.SetBool("isRunning",true);
+        localScale.x = Mathf.Abs(localScale.x);
+        transform.localScale = localScale;
         moveRight = true;
     }
     public void pointerUpRight(){
         anim.SetBool("isRunning",false);
         moveRight = false;
     }
-
     public void pointerUpJump(){
        
         anim.SetBool("isFalling",true);
     }
-
     void Movement(){
         if(moveLeft){
-            horizontalMove = - speed;
+            horizontalMove = -speed;
             
         }else if(moveRight){
             horizontalMove = speed;
@@ -79,12 +76,10 @@ public class Player : MonoBehaviour
             canDoubleJump = false;
             anim.SetBool("isFalling",false);
             anim.SetBool("isJumping",false);
-            
         }
     }
     public void jumpButton()
     {
-
         if(isGrounded)
         {
             isGrounded = false;
@@ -94,21 +89,16 @@ public class Player : MonoBehaviour
         }
         if (canDoubleJump)
         {
-            rb.velocity = Vector2.up * jumpSpeed;
+
+            rb.velocity = Vector2.up * (jumpSpeed/2);
             canDoubleJump = false;
         }   
-
     }
- 
     void EnableDoubleJump()
         {
             canDoubleJump = true;
         }
-
-    
     private void FixedUpdate(){
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
     }
-
-
 }
