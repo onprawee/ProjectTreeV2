@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed;
+    public float speed; //Move Speed 
     private float horizontalMove;
     private bool moveRight;
     private bool moveLeft;
+
+    private Button btnClimb;
     
     private Animator anim;
     private Vector3 localScale;
@@ -18,20 +21,55 @@ public class Player : MonoBehaviour
     bool canDoubleJump;
     public float delayBeforeDoubleJump;
 
+    //Ladder 
+    private bool isLadder;
+    private bool isClimbing;
+    private float verticalMove;
+
     void Start(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         anim.SetBool("isRunning",false);
         anim.SetBool("isFalling",false);
         anim.SetBool("isJumping",false);
+        anim.SetBool("isClimbing",false);
         moveLeft = false;
         moveRight = false;
+        isClimbing = false;
 
         localScale = transform.localScale;
+
+        btnClimb = GameObject.Find("ButtonClimb").GetComponent<Button>();
+        btnClimb.gameObject.SetActive(false);
     }
     void Update(){
         Movement();
+        Ladder();
     }
+
+    void Movement(){
+        if(moveLeft){
+            horizontalMove = -speed;
+        }else if(moveRight){
+            horizontalMove = speed;
+        }else{
+            horizontalMove = 0;
+        }
+    }
+
+    void Ladder(){
+        if(isClimbing){
+            verticalMove = speed;
+        }else{
+            verticalMove = 0;
+        }
+    }
+    
+    public void pointerUpJump(){
+       
+        anim.SetBool("isFalling",true);
+    }
+
     public void pointerDownLeft(){
         moveLeft = true;
         anim.SetBool("isRunning",true);
@@ -41,12 +79,12 @@ public class Player : MonoBehaviour
     public void pointerUpLeft(){
         moveLeft = false;
         anim.SetBool("isRunning",false);
-        //localScale.x *= -1; //หมุน
-        //transform.localScale = localScale;
+
     }   
+
     public void pointerDownRight(){
         anim.SetBool("isRunning",true);
-        localScale.x = Mathf.Abs(localScale.x);
+        localScale.x = Mathf.Abs(localScale.x); //หมุนกลับ
         transform.localScale = localScale;
         moveRight = true;
     }
@@ -54,20 +92,24 @@ public class Player : MonoBehaviour
         anim.SetBool("isRunning",false);
         moveRight = false;
     }
-    public void pointerUpJump(){
-       
-        anim.SetBool("isFalling",true);
-    }
-    void Movement(){
-        if(moveLeft){
-            horizontalMove = -speed;
-            
-        }else if(moveRight){
-            horizontalMove = speed;
+    
+    public void pointerDownClimbUp(){
+        //กดค้างเพื่อปีน
+        if(isLadder){
+            anim.SetBool("isClimbing",true);
+            isClimbing = true;
         }else{
-            horizontalMove = 0;
+            anim.SetBool("isClimbing",false);
+            isClimbing = false;
         }
+        
     }
+    public void pointerUpClimbUp(){
+        anim.SetBool("isClimbing",false);
+        isClimbing = false;
+        
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "Ground")
@@ -95,10 +137,35 @@ public class Player : MonoBehaviour
         }   
     }
     void EnableDoubleJump()
-        {
+    {
             canDoubleJump = true;
-        }
+    }
+
     private void FixedUpdate(){
+        //Move
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
+        //Climbing : Move
+        if(isClimbing){
+            rb.gravityScale = 0f;
+            rb.velocity = new Vector2(rb.velocity.x, verticalMove);
+        }else {
+            rb.gravityScale = 1f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.CompareTag("Ladder")){
+            isLadder = true;
+            btnClimb.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision){
+        if(collision.CompareTag("Ladder")){
+            anim.SetBool("isClimbing",false);
+            isLadder = false;
+            isClimbing = false;
+            btnClimb.gameObject.SetActive(false);
+        }
     }
 }
