@@ -9,22 +9,20 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public float speed; //Move Speed 
     private float horizontalMove;
-    private bool moveRight;
-    private bool moveLeft;
+    private bool moveRight,moveLeft;
 
-    private Button btnClimb;
-    
+    private Button btnClimb,btnRight,btnJump,btnLeft,btnClose;
     private Animator anim;
     private Vector3 localScale;
     private float jumpSpeed = 8f;
-    bool isGrounded;
-    bool canDoubleJump;
-    public float delayBeforeDoubleJump;
+    bool isGrounded,canDoubleJump;
+    public float delayBeforeDoubleJump,verticalMove;
 
     //Ladder 
-    private bool isLadder;
-    private bool isClimbing;
-    private float verticalMove;
+    private bool isLadder,isClimbing;
+
+    public GameObject showDialog;
+    // public GameObject Dialog;
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
@@ -40,7 +38,12 @@ public class Player : MonoBehaviour
         localScale = transform.localScale;
 
         btnClimb = GameObject.Find("ButtonClimb").GetComponent<Button>();
+        btnLeft = GameObject.Find("ButtonLeft").GetComponent<Button>();
+        btnRight = GameObject.Find("ButtonRight").GetComponent<Button>();
+        btnJump = GameObject.Find("ButtonJump").GetComponent<Button>();
+        
         btnClimb.gameObject.SetActive(false);
+
     }
     void Update(){
         Movement();
@@ -153,10 +156,29 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void ClosDialog(){
+        btnClose = GameObject.Find("BtnClose").GetComponent<Button>();
+        Debug.Log("Close");
+        showDialog.SetActive(false);
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Ladder")){
             isLadder = true;
             btnClimb.gameObject.SetActive(true);
+        }
+        if(collision.CompareTag("Mushroom")){
+
+            showDialog.SetActive(true);
+
+            //ShowBtnDialog();
+            // isLadder = true;
+            
+            // btnLeft.enabled = false;
+            // btnRight.enabled = false;
+            // btnJump.enabled = false;
+            // btnClimb.enabled = false;
         }
     }
 
