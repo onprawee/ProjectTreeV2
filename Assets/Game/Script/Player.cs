@@ -195,19 +195,10 @@ public class Player : MonoBehaviour
             isLadder = true;
             btnClimb.gameObject.SetActive(true);
         }
-        if (collision.CompareTag("Mushroom"))
-        {
-
-            SceneManager.LoadScene("JigsawScene");
-
-            //ShowBtnDialog();
-            // isLadder = true;
-
-            // btnLeft.enabled = false;
-            // btnRight.enabled = false;
-            // btnJump.enabled = false;
-            // btnClimb.enabled = false;
-        }
+        // if (collision.CompareTag("Mushroom"))
+        // {
+        //     SceneManager.LoadScene("JigsawScene");
+        // }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

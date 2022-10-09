@@ -10,13 +10,19 @@ public class PiecesScript : MonoBehaviour
     public bool InRightPosition;
     public bool Selected;
 
-    public GameObject ShowAddColor;
+    public GameObject ShowAddColor, PuzzleImg;
+
+    // public SpriteRenderer spriteRenderer;
+    public GameManager gameManager;
+
     void Start()
     {
 
         RightPosition = transform.position;
         //Random ตำแหน่งเกิดของจิ๊กซอว์
         transform.position = new Vector3(Random.Range(4f, 7f), Random.Range(1.3f, -2.3f));
+        SetPuzzleImage();
+        PuzzleImg.SetActive(false);
     }
 
 
@@ -57,4 +63,16 @@ public class PiecesScript : MonoBehaviour
 
         return true;
     }
+
+    private void SetPuzzleImage()
+    {
+        Debug.Log(gameManager.spriteRenderer.sprite);
+
+        for (int i = 0; i < 15; i++)
+        {
+            GameObject.Find("Pieces " + i).transform.Find("puzzle").GetComponent<SpriteRenderer>().sprite = gameManager.spriteRenderer.sprite;
+
+        }
+    }
+
 }

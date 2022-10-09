@@ -2200,6 +2200,7 @@ GameObject:
   - component: {fileID: 955101687}
   - component: {fileID: 955101686}
   - component: {fileID: 955101688}
+  - component: {fileID: 955101689}
   m_Layer: 0
   m_Name: mushroom
   m_TagString: Mushroom
@@ -2300,6 +2301,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.789959, y: 16.652054}
   m_EdgeRadius: 0
+--- !u!114 &955101689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955101685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7921484952d8a944e81d690eb64b9be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleImagePrefab: []
 --- !u!1 &976056202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,6 +2713,7 @@ GameObject:
   - component: {fileID: 1134338189}
   - component: {fileID: 1134338190}
   - component: {fileID: 1134338191}
+  - component: {fileID: 1134338192}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -2809,7 +2824,6 @@ MonoBehaviour:
   speed: 5
   delayBeforeDoubleJump: 0
   verticalMove: 0
-  showDialog: {fileID: 0}
 --- !u!95 &1134338190
 Animator:
   serializedVersion: 4
@@ -2856,6 +2870,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.136585, y: 25.851906}
   m_EdgeRadius: 0
+--- !u!114 &1134338192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134338185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f839878cf329f49a871adcf91d8ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1190964559
 GameObject:
   m_ObjectHideFlags: 0
