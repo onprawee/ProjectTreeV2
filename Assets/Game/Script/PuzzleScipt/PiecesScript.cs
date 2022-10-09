@@ -16,7 +16,7 @@ public class PiecesScript : MonoBehaviour
 
         RightPosition = transform.position;
         //Random ตำแหน่งเกิดของจิ๊กซอว์
-        transform.position = new Vector3(Random.Range(4f, 8f), Random.Range(2.5f, -1.5f));
+        transform.position = new Vector3(Random.Range(4f, 7f), Random.Range(1.3f, -2.3f));
     }
 
 
