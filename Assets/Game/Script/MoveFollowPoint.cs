@@ -5,17 +5,24 @@ using UnityEngine;
 public class MoveFollowPoint : MonoBehaviour
 {
     [SerializeField]
-    Transform[] point;
+    Transform[] points;
     [SerializeField]
     float moveSpeed = 3f;
-    int wayPointIndex = 0;
+    int waypointsIndex = 0;
 
     public GameObject[] noColor;
     public GameObject[] addColor;
 
+    private Animator anim;
+    private Vector3 localScale;
+
     void Start()
     {
-        transform.position = point[wayPointIndex].transform.position;
+        transform.position = points[waypointsIndex].transform.position;
+        anim = GetComponent<Animator>();
+        anim.SetBool("isRunning",false);
+        localScale = transform.localScale;
+        Debug.Log("Panpan");
 
     }
 
@@ -27,23 +34,41 @@ public class MoveFollowPoint : MonoBehaviour
 
     void moveToNextNode()
     {
-        transform.position = Vector3.MoveTowards(transform.position, point[wayPointIndex].transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, points[waypointsIndex].transform.position, moveSpeed * Time.deltaTime);
 
         //Show And Hide 
-        if (transform.position == point[wayPointIndex].transform.position)
+        if (transform.position == points[waypointsIndex].transform.position)
         {
-            noColor[wayPointIndex].SetActive(false);
-            addColor[wayPointIndex].SetActive(true);
+            noColor[waypointsIndex].SetActive(false);
+            addColor[waypointsIndex].SetActive(true);
+            anim.SetBool("isRunning", false);
         }
-        if (transform.position == point[wayPointIndex].transform.position)
+
+        if (transform.position == points[waypointsIndex].transform.position)
         {
-            wayPointIndex += 1;
-            Debug.Log(wayPointIndex);
+            if (points.Length - 1 == waypointsIndex)
+            {
+                Debug.Log("End");
+                return;
+            }
+            anim.SetBool("isRunning", true);
+            waypointsIndex += 1;
+            Debug.Log(waypointsIndex);
         }
 
     }
     void moveAnimation()
     {
+        if (transform.position.x >= points[waypointsIndex].transform.position.x)
+        {
+            localScale.x = Mathf.Abs(localScale.x) * -1;
+            transform.localScale = localScale;
+        }
+        else if (transform.position.x <= points[waypointsIndex].transform.position.x)
+        {
+            localScale.x = Mathf.Abs(localScale.x);
+            transform.localScale = localScale;
+        }
         Debug.Log("Animation");
     }
 

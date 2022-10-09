@@ -50,7 +50,7 @@ public class MonControl : MonoBehaviour
         }
 
         // if(transform.position == waypoints[waypointIndex].transform.position){
-        //     waypointIndex +=1;
+        //     waypointIndex +=1;z
         //     Debug.Log(waypointIndex);
         // }
         
