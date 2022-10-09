@@ -1,25 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
     public Text dialogueText;
-
     private Queue<string> sentences;
+
+    public Dialogue dialogue;
 
     void Start()
     {
         sentences = new Queue<string>();
+        StartDialogue(dialogue);
     }
-
-    public void StartDialogue(DialogText dialogue)
+    private void StartDialogue(Dialogue dialogue)
     {
-        // animator.SetBool("IsOpen", true);
-
-        // nameText.text = dialogue.name;
 
         sentences.Clear();
 
@@ -30,7 +27,6 @@ public class DialogManager : MonoBehaviour
 
         DisplayNextSentence();
     }
-
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
@@ -56,7 +52,7 @@ public class DialogManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("Close");
         // animator.SetBool("IsOpen", false);
     }
+
 }
