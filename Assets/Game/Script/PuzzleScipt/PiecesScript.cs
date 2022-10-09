@@ -10,7 +10,7 @@ public class PiecesScript : MonoBehaviour
     public bool InRightPosition;
     public bool Selected;
 
-    //public GameObject ShowUI;
+    public GameObject ShowAddColor;
     void Start()
     {
 
@@ -37,7 +37,7 @@ public class PiecesScript : MonoBehaviour
                     if (isAllRight)
                     {
                         Debug.Log("Chip <3 PanPan");
-                        //ShowUI.SetActive(true);
+                        ShowAddColor.SetActive(true);
                     }
                 }
             }
