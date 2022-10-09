@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.SceneManagement;
 
 public class MonControl : MonoBehaviour
 {
@@ -49,14 +50,6 @@ public class MonControl : MonoBehaviour
             anim.SetBool("isRunning",false);
         }
 
-        // if(transform.position == waypoints[waypointIndex].transform.position){
-        //     waypointIndex +=1;
-        //     Debug.Log(waypointIndex);
-        // }
-        
-        // if(waypointIndex == waypoints.Length){
-        //     waypointIndex = 0;
-        // }
     }
     void  MovePosition(){
         if(transform.position.x >= waypoints[waypointIndex].transform.position.x){
@@ -65,15 +58,22 @@ public class MonControl : MonoBehaviour
         }else if(transform.position.x <= waypoints[waypointIndex].transform.position.x){
             localScale.x = Mathf.Abs(localScale.x); //หมุนกลับ 
             transform.localScale = localScale;
-        }else{
-            
         }
     }
     public void Next(){
         if(transform.position == waypoints[waypointIndex].transform.position){
+            if(waypoints.Length-1 == waypointIndex){
+                SceneManager.LoadScene("SceneB");
+                Debug.Log("Scene B ");
+                return ;
+            }
             waypointIndex +=1;
             anim.SetBool("isRunning",true);
             Debug.Log(waypointIndex);
         }
+
+        
+        
+
     }
 }

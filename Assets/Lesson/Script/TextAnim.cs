@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TextAnim : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class TextAnim : MonoBehaviour
             yield return new WaitForSeconds(timeBtwnChars);
         }
     }
+
 
     // Update is called once per frame
     void Update()
