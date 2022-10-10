@@ -66,7 +66,7 @@ public class PiecesScript : MonoBehaviour
 
     private void SetPuzzleImage()
     {
-        Debug.Log(gameManager.spriteRenderer.sprite);
+        Debug.Log(gameManager.spriteRenderer.sprite.name);
 
         for (int i = 0; i < 15; i++)
         {

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         randomNumber = Random.Range(0, 4);
         spriteRenderer.sprite = puzzleImage[randomNumber];
-        Debug.Log(randomNumber);
+        // Debug.Log(randomNumber);
 
     }
 }
