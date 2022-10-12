@@ -84,7 +84,7 @@ public class MoveFollowPoint : MonoBehaviour
         else if (gameManager.spriteRenderer.sprite.name == "puzzle3_white")
         {
             transform.position = Vector3.MoveTowards(transform.position, points3[waypointsIndex].transform.position, moveSpeed * Time.deltaTime);
-            if (transform.position == points2[waypointsIndex].transform.position)
+            if (transform.position == points3[waypointsIndex].transform.position)
             {
                 addColor3[waypointsIndex].SetActive(true);
                 anim.SetBool("isRunning", false);
