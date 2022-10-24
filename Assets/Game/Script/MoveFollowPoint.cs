@@ -14,9 +14,12 @@ public class MoveFollowPoint : MonoBehaviour
     public GameObject[] addColor, addColor2, addColor3, addColor4;
     public GameManager gameManager;
     // public GameObject puzzleImage;
+    public GameObject ShowDialog;
 
     private Animator anim;
     private Vector3 localScale;
+
+    public Timer timer;
 
     void Start()
     {
@@ -52,12 +55,13 @@ public class MoveFollowPoint : MonoBehaviour
             {
                 if (points.Length - 1 == waypointsIndex)
                 {
-                    Debug.Log("End");
+                    Debug.Log("Point 1 End");
+                    ShowDialog.SetActive(true);
                     return;
                 }
                 anim.SetBool("isRunning", true);
                 waypointsIndex += 1;
-                Debug.Log(waypointsIndex);
+                //Debug.Log(waypointsIndex);
             }
         }
         else if (gameManager.spriteRenderer.sprite.name == "puzzle2_white")
@@ -73,12 +77,13 @@ public class MoveFollowPoint : MonoBehaviour
             {
                 if (points2.Length - 1 == waypointsIndex)
                 {
-                    Debug.Log("End");
+                    Debug.Log("Point 2 End");
+                    ShowDialog.SetActive(true);
                     return;
                 }
                 anim.SetBool("isRunning", true);
                 waypointsIndex += 1;
-                Debug.Log(waypointsIndex);
+                //Debug.Log(waypointsIndex);
             }
         }
         else if (gameManager.spriteRenderer.sprite.name == "puzzle3_white")
@@ -94,11 +99,13 @@ public class MoveFollowPoint : MonoBehaviour
             {
                 if (points3.Length - 1 == waypointsIndex)
                 {
+                    Debug.Log("Point 3 End");
+                    ShowDialog.SetActive(true);
                     return;
                 }
                 anim.SetBool("isRunning", true);
                 waypointsIndex += 1;
-                Debug.Log(waypointsIndex);
+                //Debug.Log(waypointsIndex);
             }
         }
         else if (gameManager.spriteRenderer.sprite.name == "puzzle4_white")
@@ -114,12 +121,13 @@ public class MoveFollowPoint : MonoBehaviour
             {
                 if (points4.Length - 1 == waypointsIndex)
                 {
-                    Debug.Log("End");
+                    Debug.Log("Point 4 End");
+                    ShowDialog.SetActive(true);
                     return;
                 }
                 anim.SetBool("isRunning", true);
                 waypointsIndex += 1;
-                Debug.Log(waypointsIndex);
+                //Debug.Log(waypointsIndex);
             }
         }
     }

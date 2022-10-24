@@ -15,6 +15,7 @@ public class PiecesScript : MonoBehaviour
     // public SpriteRenderer spriteRenderer;
     public GameManager gameManager;
 
+    public Timer timer;
     void Start()
     {
 
@@ -43,7 +44,9 @@ public class PiecesScript : MonoBehaviour
                     if (isAllRight)
                     {
                         Debug.Log("Chip <3 PanPan");
+                        timer.Stop_Stopwatch();
                         ShowAddColor.SetActive(true);
+
                     }
                 }
             }
