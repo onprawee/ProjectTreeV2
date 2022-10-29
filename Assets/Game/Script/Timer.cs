@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 {
     bool stopTimeActive = false;
     float currentime;
-    float defaultTime = 40;
+    float defaultTime = 31;
     public Text currentimeText, countTime;
     public GameObject ShowDialog;
 
