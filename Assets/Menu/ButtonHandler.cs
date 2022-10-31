@@ -28,5 +28,14 @@ public class ButtonHandler : MonoBehaviour
     {
         Debug.Log("Exit !");
     }
+
+    //Button Menu 
+    //Preorder
+    public void ButtonPreorderLesson()
+    {
+        SceneManager.LoadScene("SceneA");
+        Debug.Log("Preorder !");
+    }
+
 }
 

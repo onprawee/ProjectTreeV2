@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameButton : MonoBehaviour
 {
-
     public void ButtonBack()
     {
         SceneManager.LoadScene("Menu_Game");
