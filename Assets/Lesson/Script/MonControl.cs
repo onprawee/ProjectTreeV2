@@ -23,6 +23,10 @@ public class MonControl : MonoBehaviour
     public GameObject[] nodecoler; //node ที่ลงสี 
     public GameObject ShowDialog;
 
+    public string SceneB;
+    private Scene scene;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,7 @@ public class MonControl : MonoBehaviour
         transform.position = waypoints[waypointIndex].transform.position;
 
         localScale = transform.localScale;
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -51,7 +56,10 @@ public class MonControl : MonoBehaviour
 
             anim.SetBool("isRunning", false);
         }
-         if (transform.position == waypoints[waypointIndex].transform.position)
+        if(scene.name == "SceneB")
+        {
+        
+            if (transform.position == waypoints[waypointIndex].transform.position)
         {
                if (waypoints.Length - 1 == waypointIndex)
                 {
@@ -60,6 +68,7 @@ public class MonControl : MonoBehaviour
                     return;
               }
         }
+    }
         
     }
     void MovePosition()
