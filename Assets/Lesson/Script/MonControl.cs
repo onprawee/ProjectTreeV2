@@ -21,6 +21,7 @@ public class MonControl : MonoBehaviour
 
     public GameObject[] A; //node ที่ยังไม่ลงสี = Waypoint ใน Scence
     public GameObject[] nodecoler; //node ที่ลงสี 
+    public GameObject ShowDialog;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,16 @@ public class MonControl : MonoBehaviour
 
             anim.SetBool("isRunning", false);
         }
+         if (transform.position == waypoints[waypointIndex].transform.position)
+        {
+               if (waypoints.Length - 1 == waypointIndex)
+                {
+
+                    ShowDialog.SetActive(true);
+                    return;
+              }
+        }
+        
     }
     void MovePosition()
     {
@@ -77,6 +88,7 @@ public class MonControl : MonoBehaviour
             waypointIndex += 1;
             anim.SetBool("isRunning", true);
             Debug.Log(waypointIndex);
+           
         }
 
 
