@@ -12,7 +12,6 @@ public class Timer : MonoBehaviour
     public Text currentimeText, countTime;
     public GameObject ShowDialog;
 
-
     void Start()
     {
         currentime = defaultTime; //กำหนดเวลาเริ่มต้น
@@ -37,9 +36,7 @@ public class Timer : MonoBehaviour
 
         TimeSpan remainTime = TimeSpan.FromSeconds(defaultTime - currentime);
         countTime.text = remainTime.ToString(@"ss\:ff");
-
     }
-
     public void Start_Stopwatch()
     {
         stopTimeActive = true;

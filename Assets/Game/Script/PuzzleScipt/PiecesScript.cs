@@ -46,7 +46,6 @@ public class PiecesScript : MonoBehaviour
                         Debug.Log("Chip <3 PanPan");
                         timer.Stop_Stopwatch();
                         ShowAddColor.SetActive(true);
-
                     }
                 }
             }
