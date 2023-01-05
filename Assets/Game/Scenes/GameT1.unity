@@ -189,7 +189,7 @@ SpriteRenderer:
   m_Size: {x: 46.86, y: 49.06405}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &23885516
@@ -476,7 +476,7 @@ SpriteRenderer:
   m_Size: {x: 24.48, y: 24.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &60047743
@@ -560,7 +560,7 @@ SpriteRenderer:
   m_Size: {x: 24.48, y: 24.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &140160312
@@ -1552,7 +1552,7 @@ SpriteRenderer:
   m_Size: {x: 8.242735, y: 24.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &671610857
@@ -2257,7 +2257,7 @@ SpriteRenderer:
   m_Size: {x: 16.56, y: 20.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &955101687
@@ -2713,7 +2713,6 @@ GameObject:
   - component: {fileID: 1134338189}
   - component: {fileID: 1134338190}
   - component: {fileID: 1134338191}
-  - component: {fileID: 1134338192}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -2870,18 +2869,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.136585, y: 25.851906}
   m_EdgeRadius: 0
---- !u!114 &1134338192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134338185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f839878cf329f49a871adcf91d8ced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1190964559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,7 +3281,7 @@ SpriteRenderer:
   m_Size: {x: 46.86, y: 49.06405}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1325100061
