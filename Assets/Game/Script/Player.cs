@@ -12,15 +12,15 @@ public class Player : MonoBehaviour
     private float horizontalMove;
     private bool moveRight, moveLeft;
 
-    private Button btnClimb, btnRight, btnJump, btnLeft, btnClose;
+    private Button btnRight, btnJump, btnLeft, btnClose;
     private Animator anim;
     private Vector3 localScale;
-    private float jumpSpeed = 8f;
+    private float jumpSpeed = 7f;
     bool isGrounded, canDoubleJump;
     public float delayBeforeDoubleJump, verticalMove;
 
     //Ladder 
-    private bool isLadder, isClimbing;
+    //private bool isLadder, isClimbing;
 
 
     void Start()
@@ -30,25 +30,25 @@ public class Player : MonoBehaviour
         anim.SetBool("isRunning", false);
         anim.SetBool("isFalling", false);
         anim.SetBool("isJumping", false);
-        anim.SetBool("isClimbing", false);
+        //anim.SetBool("isClimbing", false);
         moveLeft = false;
         moveRight = false;
-        isClimbing = false;
+        //isClimbing = false;
 
         localScale = transform.localScale;
 
-        btnClimb = GameObject.Find("ButtonClimb").GetComponent<Button>();
+        // btnClimb = GameObject.Find("ButtonClimb").GetComponent<Button>();
         btnLeft = GameObject.Find("ButtonLeft").GetComponent<Button>();
         btnRight = GameObject.Find("ButtonRight").GetComponent<Button>();
         btnJump = GameObject.Find("ButtonJump").GetComponent<Button>();
 
-        btnClimb.gameObject.SetActive(false);
+        // btnClimb.gameObject.SetActive(false);
 
     }
     void Update()
     {
         Movement();
-        Ladder();
+        // Ladder();
     }
 
     void Movement()
@@ -66,19 +66,17 @@ public class Player : MonoBehaviour
             horizontalMove = 0;
         }
     }
-
-    void Ladder()
-    {
-        if (isClimbing)
-        {
-            verticalMove = speed;
-        }
-        else
-        {
-            verticalMove = 0;
-        }
-    }
-
+    // void Ladder()
+    // {
+    //     if (isClimbing)
+    //     {
+    //         verticalMove = speed;
+    //     }
+    //     else
+    //     {
+    //         verticalMove = 0;
+    //     }
+    // }
     public void pointerUpJump()
     {
 
@@ -112,27 +110,27 @@ public class Player : MonoBehaviour
         moveRight = false;
     }
 
-    public void pointerDownClimbUp()
-    {
-        //กดค้างเพื่อปีน
-        if (isLadder)
-        {
-            anim.SetBool("isClimbing", true);
-            isClimbing = true;
-        }
-        else
-        {
-            anim.SetBool("isClimbing", false);
-            isClimbing = false;
-        }
+    // public void pointerDownClimbUp()
+    // {
+    //     //กดค้างเพื่อปีน
+    //     if (isLadder)
+    //     {
+    //         anim.SetBool("isClimbing", true);
+    //         isClimbing = true;
+    //     }
+    //     else
+    //     {
+    //         anim.SetBool("isClimbing", false);
+    //         isClimbing = false;
+    //     }
 
-    }
-    public void pointerUpClimbUp()
-    {
-        anim.SetBool("isClimbing", false);
-        isClimbing = false;
+    // }
+    // public void pointerUpClimbUp()
+    // {
+    //     anim.SetBool("isClimbing", false);
+    //     isClimbing = false;
 
-    }
+    // }
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -170,15 +168,15 @@ public class Player : MonoBehaviour
         //Move
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
         //Climbing : Move
-        if (isClimbing)
-        {
-            rb.gravityScale = 0f;
-            rb.velocity = new Vector2(rb.velocity.x, verticalMove);
-        }
-        else
-        {
-            rb.gravityScale = 1f;
-        }
+        // if (isClimbing)
+        // {
+        //     rb.gravityScale = 0f;
+        //     rb.velocity = new Vector2(rb.velocity.x, verticalMove);
+        // }
+        // else
+        // {
+        //     rb.gravityScale = 1f;
+        // }
     }
 
     public void ClosDialog()
@@ -188,24 +186,24 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Ladder"))
-        {
-            isLadder = true;
-            btnClimb.gameObject.SetActive(true);
-        }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("Ladder"))
+    //     {
+    //         isLadder = true;
+    //         btnClimb.gameObject.SetActive(true);
+    //     }
 
-    }
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Ladder"))
-        {
-            anim.SetBool("isClimbing", false);
-            isLadder = false;
-            isClimbing = false;
-            btnClimb.gameObject.SetActive(false);
-        }
-    }
+    // private void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("Ladder"))
+    //     {
+    //         anim.SetBool("isClimbing", false);
+    //         isLadder = false;
+    //         isClimbing = false;
+    //         btnClimb.gameObject.SetActive(false);
+    //     }
+    // }
 }
