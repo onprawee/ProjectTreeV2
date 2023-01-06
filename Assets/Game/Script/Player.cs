@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     private float horizontalMove;
     private bool moveRight, moveLeft;
 
+
     private Button btnRight, btnJump, btnLeft, btnClose, buttonClose, buttonOpen;
     private Animator anim;
     private Vector3 localScale;
@@ -20,8 +22,14 @@ public class Player : MonoBehaviour
     public float delayBeforeDoubleJump, verticalMove;
 
     //buttonNode
-    public GameObject[] offLight, onLight;
+    public GameObject[] button, pressedButton, lightOff, lightOn;
     int nodeIndex = 0;
+
+    public List<String> orderedNode;
+    public Text textResult;
+    public Text[] orderedNodeText;
+
+    public String answer;
 
     void Start()
     {
@@ -30,14 +38,12 @@ public class Player : MonoBehaviour
         anim.SetBool("isRunning", false);
         anim.SetBool("isFalling", false);
         anim.SetBool("isJumping", false);
-        //anim.SetBool("isClimbing", false);
+
         moveLeft = false;
         moveRight = false;
-        //isClimbing = false;
 
         localScale = transform.localScale;
 
-        // btnClimb = GameObject.Find("ButtonClimb").GetComponent<Button>();
         btnLeft = GameObject.Find("ButtonLeft").GetComponent<Button>();
         btnRight = GameObject.Find("ButtonRight").GetComponent<Button>();
         btnJump = GameObject.Find("ButtonJump").GetComponent<Button>();
@@ -48,21 +54,59 @@ public class Player : MonoBehaviour
         buttonClose.gameObject.SetActive(false);
         buttonOpen.gameObject.SetActive(false);
 
-        for (int i = 0; i < offLight.Length; i++)
+        for (int i = 0; i < button.Length; i++)
         {
+            button[i].SetActive(true);
+            pressedButton[i].SetActive(false);
 
-            offLight[i].SetActive(true);
-            onLight[i].SetActive(false);
+            lightOff[i].SetActive(true);
+            lightOn[i].SetActive(false);
         }
 
-        // btnClimb.gameObject.SetActive(false);
-
+        orderedNode = new List<String>();
     }
     void Update()
     {
         Movement();
 
-        // Ladder();
+
+        for (int i = 0; i < pressedButton.Length; i++)
+        {
+            if (pressedButton[i].activeSelf)
+            {
+                lightOff[i].SetActive(false);
+                lightOn[i].SetActive(true);
+            }
+            else
+            {
+                lightOff[i].SetActive(true);
+                lightOn[i].SetActive(false);
+            }
+        }
+
+        string result = String.Join("", orderedNode.ToArray());
+
+        //เช็คว่าเดินทางครบทุกโหนดหรือยัง
+        if (result.Length == answer.Length)
+        {
+            if (result == answer)
+            {
+                textResult.text = "YOU WIN";
+                //Dialog
+            }
+            else
+            {
+                textResult.text = "YOU LOSE";
+                //Restart Scene
+                new WaitForSeconds(5);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+        else
+        {
+            textResult.text = "";
+        }
+
     }
 
     void Movement()
@@ -80,20 +124,9 @@ public class Player : MonoBehaviour
             horizontalMove = 0;
         }
     }
-    // void Ladder()
-    // {
-    //     if (isClimbing)
-    //     {
-    //         verticalMove = speed;
-    //     }
-    //     else
-    //     {
-    //         verticalMove = 0;
-    //     }
-    // }
+
     public void pointerUpJump()
     {
-
         anim.SetBool("isFalling", true);
     }
 
@@ -128,25 +161,44 @@ public class Player : MonoBehaviour
     public void pointerDownButtonOpen()
     {
         Debug.Log("you're press button idx" + nodeIndex);
-        offLight[nodeIndex].SetActive(false);
-        onLight[nodeIndex].SetActive(true);
-        Debug.Log("Open Node" + nodeIndex);
-    }
+        button[nodeIndex].SetActive(false);
+        pressedButton[nodeIndex].SetActive(true);
 
-    public void pointerUpButtonOpen()
-    {
-        Debug.Log("On Light ");
+        //เพิ่มตัวอักษรลงใน List
+        string buttonName = pressedButton[nodeIndex].name;
+        string lastChar = buttonName.Substring(buttonName.Length - 1);
+        orderedNode.Add(lastChar);
+
+        displayNode();
     }
 
     public void pointerDownButtonClose()
     {
-        offLight[nodeIndex].SetActive(true);
-        onLight[nodeIndex].SetActive(false);
+        button[nodeIndex].SetActive(true);
+        pressedButton[nodeIndex].SetActive(false);
+
+        //ลบตัวอักษรออกจาก List
+        string buttonName = pressedButton[nodeIndex].name;
+        string lastChar = buttonName.Substring(buttonName.Length - 1);
+        orderedNode.Remove(lastChar);
+
+        displayNode();
     }
 
-    public void pointerUpButtonClose()
+    public void displayNode()
     {
-        Debug.Log("Close Light");
+        //แสดงตัวอักษรใน List ลงใน Text
+        for (int i = 0; i < orderedNodeText.Length; i++)
+        {
+            if (orderedNode.Count - 1 >= i && orderedNode[i] != null)
+            {
+                orderedNodeText[i].text = orderedNode[i];
+            }
+            else
+            {
+                orderedNodeText[i].text = "";
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -196,27 +248,26 @@ public class Player : MonoBehaviour
         // }
     }
 
-    // public void ClosDialog()
-    // {
-    //     btnClose = GameObject.Find("BtnClose").GetComponent<Button>();
-    //     Debug.Log("Close");
-
-    // }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("you are in node button" + nodeIndex);
-        if (collision.CompareTag("isOffLight"))
+        if (collision.CompareTag("NotPress"))
         {
             buttonOpen.gameObject.SetActive(true);
             buttonClose.gameObject.SetActive(false);
-            nodeIndex = Array.FindIndex(offLight, x => x.gameObject.name == collision.gameObject.name);
+            nodeIndex = Array.FindIndex(button, x => x.gameObject.name == collision.gameObject.name);
 
         }
-        else if (collision.CompareTag("isOnLight"))
+        else if (collision.CompareTag("Pressed"))
         {
             buttonClose.gameObject.SetActive(true);
-            nodeIndex = Array.FindIndex(onLight, x => x.gameObject.name == collision.gameObject.name);
+            nodeIndex = Array.FindIndex(pressedButton, x => x.gameObject.name == collision.gameObject.name);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        buttonOpen.gameObject.SetActive(false);
+        buttonClose.gameObject.SetActive(false);
     }
 }
