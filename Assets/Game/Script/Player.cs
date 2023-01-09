@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     private float horizontalMove;
     private bool moveRight, moveLeft;
 
-
     private Button btnRight, btnJump, btnLeft, btnClose, buttonClose, buttonOpen;
     private Animator anim;
     private Vector3 localScale;
@@ -28,8 +27,11 @@ public class Player : MonoBehaviour
     public List<String> orderedNode;
     public Text textResult;
     public Text[] orderedNodeText;
-
     public String answer;
+
+    //Key and Door
+    public Transform keyFollowPoint;
+    public Key followingKey;
 
     void Start()
     {
@@ -106,7 +108,6 @@ public class Player : MonoBehaviour
         {
             textResult.text = "";
         }
-
     }
 
     void Movement()
