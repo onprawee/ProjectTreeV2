@@ -8,12 +8,13 @@ using UnityEngine.UI;
 public class ExitDoor : MonoBehaviour
 {
 
-    private Button btnEnterDoor;
+    public Button btnEnterDoor;
 
-    void Start() {
-        btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
+    void Start()
+    {
+        //btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
     }
-    
+
     void Update()
     {
 
@@ -27,12 +28,13 @@ public class ExitDoor : MonoBehaviour
         // other is Player
         if (other.tag == "Player")
         {
-            
+
             btnEnterDoor.gameObject.SetActive(true);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
+    private void OnTriggerExit2D(Collider2D other)
+    {
         // ถ้า Object ที่เดินออกจากประตู คือ Player
         if (other.tag == "Player")
         {
