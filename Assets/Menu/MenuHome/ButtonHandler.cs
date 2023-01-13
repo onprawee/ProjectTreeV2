@@ -11,17 +11,14 @@ public class ButtonHandler : MonoBehaviour
     public void ButtonMenuHome()
     {
         SceneManager.LoadScene("Menu_Home");
-        Debug.Log("Back to menu!");
     }
     public void ButtonMenuGame()
     {
         SceneManager.LoadScene("Menu_Game");
-        Debug.Log("Menu Game!");
     }
     public void ButtonMenuLearning()
     {
         SceneManager.LoadScene("Menu_Learn");
-        Debug.Log("Menu Learning!");
     }
 
     public void ButtonExit()
@@ -34,7 +31,6 @@ public class ButtonHandler : MonoBehaviour
     public void ButtonPreorderLesson()
     {
         SceneManager.LoadScene("SceneA");
-        Debug.Log("Preorder !");
     }
 
 }

@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Game/Scenes/GameT1.unity
     guid: 154c3d5e2635fe346a538222d216a781
@@ -21,19 +18,25 @@ EditorBuildSettings:
     path: Assets/Lesson/Scenes/SceneB.unity
     guid: 074c230bf6e1eed41967c0a0fd043aab
   - enabled: 1
-    path: Assets/Menu/Menu_Home.unity
+    path: Assets/Menu/MenuHome/Menu_Home.unity
     guid: 7afb4b5fcb5aa294c8196cd27ee53232
   - enabled: 1
-    path: Assets/Menu/Menu_Game.unity
-    guid: e44adfdf3325708459a6722f95b31e69
-  - enabled: 1
-    path: Assets/Menu/Menu_Learn.unity
+    path: Assets/Menu/MenuLearning/Menu_Learn.unity
     guid: 0a78ab59c8f57a34388f9df069e4123c
   - enabled: 1
-    path: Assets/Game/Scenes/menuGame/Menu_Level.unity
-    guid: e99761129d3c5dc40b0c1949a4a8853d
+    path: Assets/Menu/MenuGame/Menu_Game.unity
+    guid: ccf1dcce53f49b644b1704fcc9b884ca
   - enabled: 1
-    path: Assets/Game/Scenes/TravesalScene/PreOrder Scene1.unity
+    path: Assets/Game/Scenes/menuLevelGame/PreorderLevel.unity
+    guid: d1865c51e0712224da1f2c36c706b7f1
+  - enabled: 1
+    path: Assets/Game/Scenes/menuLevelGame/InorderLevel.unity
+    guid: 83cd81839f1564e42b1cc7c96045162b
+  - enabled: 1
+    path: Assets/Game/Scenes/menuLevelGame/PostorderLevel.unity
+    guid: 99954f59dd9bb2d449565fe1f797613f
+  - enabled: 1
+    path: Assets/Game/Scenes/TravesalScene/PreOrderLevel1.unity
     guid: f68ce426380791c4fbc18b8e575a7643
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 9329e3bf6fc58cb47a0318b0bc6b9d03, type: 2}
