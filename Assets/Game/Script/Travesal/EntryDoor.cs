@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class EntryDoor : MonoBehaviour
 {
-    private Player thePlayer;
+    private PlayerPressButton thePlayer;
 
     public SpriteRenderer theSprite;
 
@@ -22,7 +22,7 @@ public class EntryDoor : MonoBehaviour
 
     void Start()
     {
-        thePlayer = FindObjectOfType<Player>();
+        thePlayer = FindObjectOfType<PlayerPressButton>();
 
         btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
         btnEnterDoor.gameObject.SetActive(false);

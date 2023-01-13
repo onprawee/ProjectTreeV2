@@ -30,7 +30,7 @@ public class Key : MonoBehaviour
         {
             if (!isFollowing)
             {
-                Player theplayer = FindObjectOfType<Player>();
+                PlayerPressButton theplayer = other.GetComponent<PlayerPressButton>();
 
                 followTarget = theplayer.keyFollowPoint;
 
