@@ -11,16 +11,23 @@ public class PlayerPressButton : MonoBehaviour
     int nodeIndex = 0;
 
     public List<String> orderedNode;
-    public Text textStatus;
+
     public Text[] orderedNodeText;
     public String answer;
 
     //Key and Door
     public Transform keyFollowPoint;
     public Key followingKey;
-    // Start is called before the first frame update
+
+    //Dialog Box
+    private Button buttonHome, buttonTryAgain, buttonNext;
+    private Text orderTitle, orderText;
+    public Text textStatus;
+    public GameObject dialogBox, ScreenBlur;
+
     void Start()
     {
+        //Press&Close Button Light
         buttonClose = GameObject.Find("ButtonClose").GetComponent<Button>();
         buttonOpen = GameObject.Find("ButtonOpen").GetComponent<Button>();
 
@@ -37,9 +44,26 @@ public class PlayerPressButton : MonoBehaviour
         }
 
         orderedNode = new List<String>();
+
+        //Dialog Box
+        buttonHome = GameObject.Find("ButtonHome").GetComponent<Button>();
+        buttonTryAgain = GameObject.Find("ButtonTryAgain").GetComponent<Button>();
+        buttonNext = GameObject.Find("ButtonNext").GetComponent<Button>();
+
+        orderTitle = GameObject.Find("OrderTitle").GetComponent<Text>();
+        orderText = GameObject.Find("OrderText").GetComponent<Text>();
+
+        buttonHome.gameObject.SetActive(false);
+        buttonTryAgain.gameObject.SetActive(false);
+        buttonNext.gameObject.SetActive(false);
+        orderTitle.gameObject.SetActive(false);
+        orderText.gameObject.SetActive(false);
+
+        dialogBox.SetActive(false);
+        ScreenBlur.SetActive(false);
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         for (int i = 0; i < pressedButton.Length; i++)
@@ -61,17 +85,29 @@ public class PlayerPressButton : MonoBehaviour
         //เช็คว่าเดินทางครบทุกโหนดหรือยัง
         if (result.Length == answer.Length)
         {
+            dialogBox.SetActive(true);
+            ScreenBlur.SetActive(true);
+            //Set Text
+            orderTitle.gameObject.SetActive(true);
+            orderText.gameObject.SetActive(true);
+            orderText.text = result;
+
+            buttonHome.gameObject.SetActive(true);
             if (result == answer)
             {
-                textStatus.text = "YOU WIN";
-                //Dialog
+
+                textStatus.text = "ลำดับการเดินทางถูกต้อง";
+
+                buttonNext.gameObject.SetActive(true);
             }
             else
             {
-                textStatus.text = "YOU LOSE";
+                textStatus.text = "ลำดับการเดินทางไม่ถูกต้อง";
+                buttonTryAgain.gameObject.SetActive(true);
+                
                 //Restart Scene
-                new WaitForSeconds(5);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                // new WaitForSeconds(5);
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
         else
