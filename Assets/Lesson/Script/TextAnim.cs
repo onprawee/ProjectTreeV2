@@ -10,6 +10,8 @@ public class TextAnim : MonoBehaviour
     public string[] stringArray;
     [SerializeField] float timeBtwnChars;
     [SerializeField] float timeBtwnWords;
+
+    
     int i = 0;
     void Start()
     {
@@ -39,7 +41,9 @@ public class TextAnim : MonoBehaviour
                 //ทำให้ข้อความเปลี่ยนอัตโนมัต
                 // Invoke("EndCheck", timeBtwnWords);
                 break;
+                
             }
+            
             counter += 1;
             yield return new WaitForSeconds(timeBtwnChars);
         }
