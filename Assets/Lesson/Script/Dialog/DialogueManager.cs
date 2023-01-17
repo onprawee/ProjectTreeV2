@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class DialogueManager : MonoBehaviour
 
     //Type Effect delay
     public float delay = 0.1f;
+    public string SceneB;
+    //private Scene scene;
+    private int scene;
 
     public CustomGameObject[] previousPreObj; // ใช้สำหรับเก็บรายการรูปภาพก่อนประโยคที่กำลังแสดงอยู่ เพื่อใช้สำหรับซ่อนรูปภาพเหล่านั้นในการกดปุ่ม Next ครั้งถัดไป
 
@@ -25,6 +29,7 @@ public class DialogueManager : MonoBehaviour
 
         //Show First text In Array 
         StartDialogue(dialogue);
+        scene = SceneManager.GetActiveScene().buildIndex + 1;
     }
     private void StartDialogue(Dialogue dialogue)
     {
@@ -48,6 +53,8 @@ public class DialogueManager : MonoBehaviour
         //ถ้าไม่มี ข้อความเหลืออยู่ในคิว : จะปิด Dialog 
         if (dialogueObjects.Count == 0)
         {
+            SceneManager.LoadScene(scene);
+            Debug.Log("i'm on the next level ");
             return;
         }
 
