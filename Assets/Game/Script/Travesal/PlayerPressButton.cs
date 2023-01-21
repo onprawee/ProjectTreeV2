@@ -20,7 +20,7 @@ public class PlayerPressButton : MonoBehaviour
 
     //Dialog Box
     public Button buttonMenuGame, buttonTryAgain, buttonNext;
-    private Text orderTitle, orderText;
+    // private Text orderTitle, orderText;
     public Text textStatus;
     public GameObject dialogBox, ScreenBlur;
 
@@ -46,14 +46,14 @@ public class PlayerPressButton : MonoBehaviour
         orderedNode = new List<String>();
 
 
-        orderTitle = GameObject.Find("OrderTitle").GetComponent<Text>();
-        orderText = GameObject.Find("OrderText").GetComponent<Text>();
+        // orderTitle = GameObject.Find("OrderTitle").GetComponent<Text>();
+        // orderText = GameObject.Find("OrderText").GetComponent<Text>();
 
         buttonMenuGame.gameObject.SetActive(false);
         buttonTryAgain.gameObject.SetActive(false);
         buttonNext.gameObject.SetActive(false);
-        orderTitle.gameObject.SetActive(false);
-        orderText.gameObject.SetActive(false);
+        // orderTitle.gameObject.SetActive(false);
+        // orderText.gameObject.SetActive(false);
 
         dialogBox.SetActive(false);
         ScreenBlur.SetActive(false);
@@ -84,9 +84,9 @@ public class PlayerPressButton : MonoBehaviour
             dialogBox.SetActive(true);
             ScreenBlur.SetActive(true);
             //Set Text
-            orderTitle.gameObject.SetActive(true);
-            orderText.gameObject.SetActive(true);
-            orderText.text = result;
+            // orderTitle.gameObject.SetActive(true);
+            // orderText.gameObject.SetActive(true);
+            // orderText.text = result;
 
             buttonMenuGame.gameObject.SetActive(true);
             if (result == answer)
