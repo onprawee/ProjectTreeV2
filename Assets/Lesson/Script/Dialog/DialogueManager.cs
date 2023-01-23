@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class DialogueManager : MonoBehaviour
 {
+    
     public Text dialogueText;
     // Queue : FIFO => First In Fist Out 
     private Queue<DialogueObject> dialogueObjects;
@@ -22,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     public CustomGameObject[] previousPreObj; // ใช้สำหรับเก็บรายการรูปภาพก่อนประโยคที่กำลังแสดงอยู่ เพื่อใช้สำหรับซ่อนรูปภาพเหล่านั้นในการกดปุ่ม Next ครั้งถัดไป
 
     public CustomGameObject[] previousPostObj; // ใช้สำหรับเก็บรายการรูปภาพหลังประโยคที่กำลังแสดงอยู่ เพื่อใช้สำหรับซ่อนรูปภาพเหล่านั้นในการกดปุ่ม Next ครั้งถัดไป
+
 
     void Start()
     {
