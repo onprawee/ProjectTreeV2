@@ -5,11 +5,11 @@ public class PlayerTelepoters : MonoBehaviour
 {
     private GameObject currentTeleporter;
 
-    private Button btnEnterDoor;
+    public Button btnEnterDoor;
 
     void Start()
     {
-        btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
+        // btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
     }
 
     void Update()

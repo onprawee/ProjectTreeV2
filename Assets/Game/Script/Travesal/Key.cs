@@ -33,7 +33,16 @@ public class Key : MonoBehaviour
                 followTarget = theplayer.keyFollowPoint;
 
                 isFollowing = true;
-                theplayer.followingKey = this;
+
+                for (int i = 0; i < theplayer.followingKey.Length; i++)
+                {
+                    if (theplayer.followingKey[i] == null)
+                    {
+                        theplayer.followingKey[i] = this;
+                        break;
+                    }
+                }
+
             }
         }
     }

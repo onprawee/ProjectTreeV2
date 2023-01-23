@@ -13,14 +13,14 @@ public class EntryDoor : MonoBehaviour
 
     private GameObject currentTeleporter;
 
-    private Button btnEnterDoor;
+    public Button btnEnterDoor;
 
 
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerPressButton>();
 
-        btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
+        // btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
         btnEnterDoor.gameObject.SetActive(false);
     }
 
@@ -28,17 +28,23 @@ public class EntryDoor : MonoBehaviour
     {
         if (waitingToOpen)
         {
-            if (Vector3.Distance(thePlayer.followingKey.transform.position, transform.position) < 0.1f)
+            for (int i = 0; i < thePlayer.followingKey.Length; i++)
             {
-                waitingToOpen = false;
+                if (thePlayer.followingKey[i] != null)
+                {
+                    if (Vector3.Distance(thePlayer.followingKey[i].transform.position, transform.position) < 0.1f)
+                    {
+                        waitingToOpen = false;
 
-                doorOpen = true;
+                        doorOpen = true;
 
-                theSprite.sprite = doorOpenSprite;
+                        theSprite.sprite = doorOpenSprite;
 
-                thePlayer.followingKey.gameObject.SetActive(false);
-                thePlayer.followingKey = null;
+                        thePlayer.followingKey[i].gameObject.SetActive(false);
+                        thePlayer.followingKey[i] = null;
 
+                    }
+                }
             }
         }
     }
@@ -51,10 +57,13 @@ public class EntryDoor : MonoBehaviour
         // other is Player
         if (other.tag == "Player")
         {
-            if (thePlayer.followingKey != null)
+            for (int i = 0; i < thePlayer.followingKey.Length; i++)
             {
-                thePlayer.followingKey.followTarget = transform;
-                waitingToOpen = true;
+                if (thePlayer.followingKey[i] != null)
+                {
+                    thePlayer.followingKey[i].followTarget = transform;
+                    waitingToOpen = true;
+                }
             }
 
             if (doorOpen)

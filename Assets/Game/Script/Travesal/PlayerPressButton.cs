@@ -16,7 +16,8 @@ public class PlayerPressButton : MonoBehaviour
 
     //Key and Door
     public Transform keyFollowPoint;
-    public Key followingKey;
+    public Key[] followingKey ;
+
 
     //Dialog Box
     public Button buttonMenuGame, buttonTryAgain, buttonNext;
