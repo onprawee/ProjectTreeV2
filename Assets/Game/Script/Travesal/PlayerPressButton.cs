@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerPressButton : MonoBehaviour
 {
     private Button buttonClose, buttonOpen;
-    public GameObject[] button, pressedButton, lightOff, lightOn;
+    public GameObject[] button, pressedButton, lightOff, lightOn, imageOff, imageOn;
     int nodeIndex = 0;
 
     public List<String> orderedNode;
@@ -16,7 +16,7 @@ public class PlayerPressButton : MonoBehaviour
 
     //Key and Door
     public Transform keyFollowPoint;
-    public Key[] followingKey ;
+    public Key[] followingKey;
 
 
     //Dialog Box
@@ -42,6 +42,9 @@ public class PlayerPressButton : MonoBehaviour
 
             lightOff[i].SetActive(true);
             lightOn[i].SetActive(false);
+
+            imageOff[i].SetActive(true);
+            imageOn[i].SetActive(false);
         }
 
         orderedNode = new List<String>();
@@ -59,6 +62,7 @@ public class PlayerPressButton : MonoBehaviour
         dialogBox.SetActive(false);
         ScreenBlur.SetActive(false);
 
+
     }
 
     void Update()
@@ -69,11 +73,17 @@ public class PlayerPressButton : MonoBehaviour
             {
                 lightOff[i].SetActive(false);
                 lightOn[i].SetActive(true);
+
+                imageOff[i].SetActive(false);
+                imageOn[i].SetActive(true);
             }
             else
             {
                 lightOff[i].SetActive(true);
                 lightOn[i].SetActive(false);
+
+                imageOff[i].SetActive(true);
+                imageOn[i].SetActive(false);
             }
         }
 
@@ -96,11 +106,13 @@ public class PlayerPressButton : MonoBehaviour
                 textStatus.text = "ลำดับการเดินทางถูกต้อง";
 
                 buttonNext.gameObject.SetActive(true);
+
             }
             else
             {
                 textStatus.text = "ลำดับการเดินทางไม่ถูกต้อง";
                 buttonTryAgain.gameObject.SetActive(true);
+
 
             }
         }
@@ -112,7 +124,7 @@ public class PlayerPressButton : MonoBehaviour
 
     public void pointerDownButtonOpen()
     {
-        Debug.Log("you're press button idx" + nodeIndex);
+        //Debug.Log("you're press button idx" + nodeIndex);
         button[nodeIndex].SetActive(false);
         pressedButton[nodeIndex].SetActive(true);
 
@@ -155,7 +167,7 @@ public class PlayerPressButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("you are in node button" + nodeIndex);
+        //Debug.Log("you are in node button" + nodeIndex);
         if (collision.CompareTag("NotPress"))
         {
             buttonOpen.gameObject.SetActive(true);

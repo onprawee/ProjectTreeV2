@@ -24,7 +24,7 @@ public class PlayerTelepoters : MonoBehaviour
             Teleporters teleporter = currentTeleporter.GetComponent<Teleporters>();
             transform.position = teleporter.GetDestination().position;
 
-            Debug.Log("Teleporting");
+            //Debug.Log("Teleporting");
         }
     }
 
