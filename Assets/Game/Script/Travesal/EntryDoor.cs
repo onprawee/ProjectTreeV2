@@ -21,7 +21,8 @@ public class EntryDoor : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerPressButton>();
 
         // btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
-        btnEnterDoor.gameObject.SetActive(false);
+
+        // btnEnterDoor.gameObject.SetActive(false);
     }
 
     void Update()

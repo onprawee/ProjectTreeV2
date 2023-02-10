@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerPressButton : MonoBehaviour
 {
     private Button buttonClose, buttonOpen;
-    public GameObject[] button, pressedButton, lightOff, lightOn, imageOff, imageOn;
+    public GameObject[] button, pressedButton, lightOff, lightOn;
     int nodeIndex = 0;
 
     public List<String> orderedNode;
@@ -32,8 +32,8 @@ public class PlayerPressButton : MonoBehaviour
         buttonClose = GameObject.Find("ButtonClose").GetComponent<Button>();
         buttonOpen = GameObject.Find("ButtonOpen").GetComponent<Button>();
 
-        buttonClose.gameObject.SetActive(false);
-        buttonOpen.gameObject.SetActive(false);
+        // buttonClose.gameObject.SetActive(false);
+        // buttonOpen.gameObject.SetActive(false);
 
         for (int i = 0; i < button.Length; i++)
         {
@@ -43,8 +43,8 @@ public class PlayerPressButton : MonoBehaviour
             lightOff[i].SetActive(true);
             lightOn[i].SetActive(false);
 
-            imageOff[i].SetActive(true);
-            imageOn[i].SetActive(false);
+            // imageOff[i].SetActive(true);
+            // imageOn[i].SetActive(false);
         }
 
         orderedNode = new List<String>();
@@ -56,6 +56,7 @@ public class PlayerPressButton : MonoBehaviour
         buttonMenuGame.gameObject.SetActive(false);
         buttonTryAgain.gameObject.SetActive(false);
         buttonNext.gameObject.SetActive(false);
+
         // orderTitle.gameObject.SetActive(false);
         // orderText.gameObject.SetActive(false);
 
@@ -67,23 +68,19 @@ public class PlayerPressButton : MonoBehaviour
 
     void Update()
     {
+
         for (int i = 0; i < pressedButton.Length; i++)
         {
             if (pressedButton[i].activeSelf)
             {
                 lightOff[i].SetActive(false);
                 lightOn[i].SetActive(true);
-
-                imageOff[i].SetActive(false);
-                imageOn[i].SetActive(true);
             }
             else
             {
                 lightOff[i].SetActive(true);
                 lightOn[i].SetActive(false);
 
-                imageOff[i].SetActive(true);
-                imageOn[i].SetActive(false);
             }
         }
 
@@ -184,7 +181,7 @@ public class PlayerPressButton : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        buttonOpen.gameObject.SetActive(false);
-        buttonClose.gameObject.SetActive(false);
+        buttonOpen.gameObject.SetActive(true);
+        buttonClose.gameObject.SetActive(true);
     }
 }

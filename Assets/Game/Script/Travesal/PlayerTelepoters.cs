@@ -50,6 +50,6 @@ public class PlayerTelepoters : MonoBehaviour
             }
         }
 
-        btnEnterDoor.gameObject.SetActive(false);
+        // btnEnterDoor.gameObject.SetActive(false);
     }
 }

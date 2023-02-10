@@ -5256,18 +5256,6 @@ MonoBehaviour:
   - {fileID: 1122191942}
   - {fileID: 790896544}
   - {fileID: 871502320}
-  imageOff:
-  - {fileID: 784321124}
-  - {fileID: 1524735666}
-  - {fileID: 2060718620}
-  - {fileID: 1729699290}
-  - {fileID: 2017566063}
-  imageOn:
-  - {fileID: 1046404799}
-  - {fileID: 105777711}
-  - {fileID: 786040174}
-  - {fileID: 708150580}
-  - {fileID: 1913213989}
   orderedNode: []
   orderedNodeText:
   - {fileID: 1183921182}
@@ -11883,7 +11871,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.2805002}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1288591521
@@ -12240,12 +12228,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 479196460, guid: 90950568d2eba4a45b9be6ba05d8b4e3, type: 3}
+  m_Sprite: {fileID: -538324702, guid: fa15e40a373bb964f8cd83912859dbe6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3, y: 1.3605314}
+  m_Size: {x: 5, y: 5.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -12283,8 +12271,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3, y: 1.3605314}
-    newSize: {x: 1.3, y: 1.3605314}
+    oldSize: {x: 5, y: 5.2}
+    newSize: {x: 5, y: 5.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -12305,7 +12293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theSprite: {fileID: 1323800439}
-  doorOpenSprite: {fileID: 521496985, guid: 90950568d2eba4a45b9be6ba05d8b4e3, type: 3}
+  doorOpenSprite: {fileID: 1119317095, guid: fa15e40a373bb964f8cd83912859dbe6, type: 3}
   doorOpen: 0
   waitingToOpen: 0
   btnEnterDoor: {fileID: 813197109}
@@ -15224,12 +15212,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 521496985, guid: 90950568d2eba4a45b9be6ba05d8b4e3, type: 3}
+  m_Sprite: {fileID: 1119317095, guid: fa15e40a373bb964f8cd83912859dbe6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.3505275}
+  m_Size: {x: 5, y: 5.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15243,8 +15231,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713660515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.64, y: -7.37, z: 0.9039602}
-  m_LocalScale: {x: 0.84982, y: 0.87581414, z: 1}
+  m_LocalPosition: {x: -4.54, y: -6.27, z: 0.9039602}
+  m_LocalScale: {x: 0.599803, y: 0.63540316, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -15280,8 +15268,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.3505275}
-    newSize: {x: 1.28, y: 1.3505275}
+    oldSize: {x: 5, y: 5.2}
+    newSize: {x: 5, y: 5.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
