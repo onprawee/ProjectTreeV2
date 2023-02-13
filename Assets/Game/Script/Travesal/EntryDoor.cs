@@ -23,6 +23,7 @@ public class EntryDoor : MonoBehaviour
         // btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
 
         // btnEnterDoor.gameObject.SetActive(false);
+        btnEnterDoor.interactable = false;
     }
 
     void Update()
@@ -64,12 +65,15 @@ public class EntryDoor : MonoBehaviour
                 {
                     thePlayer.followingKey[i].followTarget = transform;
                     waitingToOpen = true;
+                    // btnEnterDoor.gameObject.SetActive(true);
+                    btnEnterDoor.interactable = true;
                 }
             }
 
             if (doorOpen)
             {
-                btnEnterDoor.gameObject.SetActive(true);
+                // btnEnterDoor.gameObject.SetActive(true);
+                btnEnterDoor.interactable = true;
             }
         }
 

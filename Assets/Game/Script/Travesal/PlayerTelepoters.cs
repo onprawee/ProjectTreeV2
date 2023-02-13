@@ -9,7 +9,7 @@ public class PlayerTelepoters : MonoBehaviour
 
     void Start()
     {
-        // btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
+
     }
 
     void Update()

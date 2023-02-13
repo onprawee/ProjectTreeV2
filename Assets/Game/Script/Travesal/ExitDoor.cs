@@ -34,7 +34,7 @@ public class ExitDoor : MonoBehaviour
         // ถ้า Object ที่เดินออกจากประตู คือ Player
         if (other.tag == "Player")
         {
-            btnEnterDoor.gameObject.SetActive(false);
+            btnEnterDoor.gameObject.SetActive(true);
         }
     }
 }
