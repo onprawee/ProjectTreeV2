@@ -36,8 +36,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
-
-
     }
 
     void Movement()
@@ -90,7 +88,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collision: " + other.gameObject.name);
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "Ground")
         {
             isGrounded = true;

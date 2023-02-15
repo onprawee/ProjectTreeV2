@@ -33,6 +33,7 @@ public class PlayerTelepoters : MonoBehaviour
         // Teleporter tag is assign to EnrtryDoor & ExitDoor
         // ถ้า Player เดินไปชน Object ที่มี tag=Teleporter
         // other = Teleporter(ประตู)
+
         if (other.CompareTag("Teleporter"))
         {
             currentTeleporter = other.gameObject;

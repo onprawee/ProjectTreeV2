@@ -6,7 +6,7 @@ public class DamageController : MonoBehaviour
     [SerializeField] private HealthManager healthManager;
 
     private void OnTriggerEnter2D(Collider2D collision)
-    
+
     {
         Debug.Log("Collision: " + collision.name);
         if (collision.CompareTag("Player"))
@@ -22,6 +22,7 @@ public class DamageController : MonoBehaviour
         healthManager.playerHealth = healthManager.playerHealth - trapsDamage;
         healthManager.UpdateHealth();
         Debug.Log("Player Health: " + healthManager.playerHealth);
-        gameObject.SetActive(false);
+        //     gameObject.SetActive(false);
+        //
     }
 }

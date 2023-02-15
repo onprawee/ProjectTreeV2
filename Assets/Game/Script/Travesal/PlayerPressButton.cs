@@ -64,7 +64,7 @@ public class PlayerPressButton : MonoBehaviour
         //เช็คว่าเดินทางครบทุกโหนดหรือยัง
         if (result.Length == answer.Length)
         {
-            Debug.Log("You're complete the path");
+            // Debug.Log("You're complete the path");
 
             if (result == answer)
             {
@@ -84,7 +84,7 @@ public class PlayerPressButton : MonoBehaviour
         }
         else
         {
-            Debug.Log("You're not complete the path");
+            // Debug.Log("You're not complete the path");
         }
     }
 
@@ -133,7 +133,8 @@ public class PlayerPressButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("you are in node button" + nodeIndex);
+        // Debug.Log("you are in node button" + nodeIndex);
+
         if (collision.CompareTag("NotPress"))
         {
             buttonOpen.gameObject.SetActive(true);

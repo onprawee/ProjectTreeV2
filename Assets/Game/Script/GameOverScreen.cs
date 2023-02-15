@@ -15,19 +15,27 @@ public class GameOverScreen : MonoBehaviour
 
     }
 
-    public void RestartButton()
+    void RestartButton()
     {
         //Restart Scene
         new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void nextLevel()
+    //ปุ่ม Next Level 
+    void nextLevel()
     {
-        // SceneManager.LoadScene("PreorderLevel1");
-        Debug.Log("Next Level");
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+
+        if (currentLevel >= PlayerPrefs.GetInt("LevelsUnlockPreorder"))
+        {
+            PlayerPrefs.SetInt("LevelsUnlockPreorder", currentLevel + 1);
+        }
+
+        Debug.Log("Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
     }
-    public void MenuGame()
+    void MenuGame()
     {
         SceneManager.LoadScene("Menu_Game");
     }
