@@ -9,6 +9,8 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
 
+    public GameOverScreen gameOverScreen;
+
     private void Start()
     {
         UpdateHealth();
@@ -24,6 +26,17 @@ public class HealthManager : MonoBehaviour
         {
             hearts[i].sprite = fullHeart;
         }
+
+        if (playerHealth <= 0)
+        {
+            gameOverScreen.Setup("พลังชีวิตหมดแล้ว");
+            gameOverScreen.buttonRestart.gameObject.SetActive(true);
+            gameOverScreen.buttonMenu.gameObject.SetActive(true);
+            gameOverScreen.buttonnext.gameObject.SetActive(false);
+        }
+
+
+
     }
 }
 

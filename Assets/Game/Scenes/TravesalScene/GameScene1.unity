@@ -1904,14 +1904,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 58192780}
-  - component: {fileID: 58192781}
   m_Layer: 5
-  m_Name: 'Dialog '
+  m_Name: GameOverSceen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &58192780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1925,34 +1924,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 98968012}
-  - {fileID: 1876495898}
-  - {fileID: 1335234724}
-  - {fileID: 1987972410}
-  - {fileID: 913020879}
-  - {fileID: 1932163249}
-  - {fileID: 422282735}
-  - {fileID: 928223666}
-  - {fileID: 1606523188}
   m_Father: {fileID: 422187207}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 2960, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &58192781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58192779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b59a36204ad406844813086a9be6cd75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &64717974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3358,13 +3337,14 @@ GameObject:
   - component: {fileID: 98968012}
   - component: {fileID: 98968014}
   - component: {fileID: 98968013}
+  - component: {fileID: 98968015}
   m_Layer: 5
   m_Name: ScreenBlur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &98968012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3376,14 +3356,24 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1876495898}
+  - {fileID: 1335234724}
+  - {fileID: 1987972410}
+  - {fileID: 913020879}
+  - {fileID: 1932163249}
+  - {fileID: 302348952}
+  - {fileID: 422282735}
+  - {fileID: 1039894186}
+  - {fileID: 928223666}
+  - {fileID: 1606523188}
   m_Father: {fileID: 58192780}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2860, y: 1340}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &98968013
 MonoBehaviour:
@@ -3398,7 +3388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3423,6 +3413,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98968011}
   m_CullTransparentMesh: 1
+--- !u!114 &98968015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98968011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b17cb3360c87f46be9592d97b62754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textStatus: {fileID: 1335234725}
+  buttonRestart: {fileID: 422282737}
+  buttonMenu: {fileID: 1932163251}
+  buttonnext: {fileID: 928223668}
 --- !u!1 &99687941
 GameObject:
   m_ObjectHideFlags: 0
@@ -10419,13 +10425,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1932163249}
-  m_RootOrder: 0
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -128, y: -212.96997}
+  m_SizeDelta: {x: -2710, y: -1190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &302348953
 MonoBehaviour:
@@ -13228,7 +13234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04481677b963d74c9ada02089f00e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 5
+  playerHealth: 1
   hearts:
   - {fileID: 1782899607}
   - {fileID: 813186787}
@@ -13237,6 +13243,7 @@ MonoBehaviour:
   - {fileID: 549056440}
   fullHeart: {fileID: 1132805372, guid: 3ee07492e4e06c945b5a7c2863af9ebf, type: 3}
   emptyHeart: {fileID: 641676529, guid: 742d9b1ab2ac53242a102341bdbaad30, type: 3}
+  gameOverScreen: {fileID: 98968015}
 --- !u!4 &403779980
 Transform:
   m_ObjectHideFlags: 0
@@ -14402,9 +14409,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1039894186}
-  m_Father: {fileID: 58192780}
+  m_Children: []
+  m_Father: {fileID: 98968012}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -14456,9 +14462,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 58192781}
-        m_TargetAssemblyTypeName: DialogButton, Assembly-CSharp
-        m_MethodName: buttonTryAgain
+      - m_Target: {fileID: 98968015}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: RestartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21922,16 +21928,11 @@ MonoBehaviour:
   - {fileID: 1746776153}
   - {fileID: 402750420}
   - {fileID: 548931651}
-  answer: ABDCF
+  answer: ABC
   keyFollowPoint: {fileID: 628936559}
   followingKey:
   - {fileID: 0}
-  buttonMenuGame: {fileID: 1932163251}
-  buttonTryAgain: {fileID: 422282737}
-  buttonNext: {fileID: 928223668}
-  textStatus: {fileID: 1335234725}
-  dialogBox: {fileID: 1876495897}
-  ScreenBlur: {fileID: 98968011}
+  gameOverScreen: {fileID: 98968015}
 --- !u!114 &625534715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21959,7 +21960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a5f97681bebae4e89b6678b53ca447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 9345829}
 --- !u!61 &625534717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31752,12 +31753,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 58192780}
-  m_RootOrder: 4
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 379.95, y: 53.954}
+  m_AnchoredPosition: {x: 379.95, y: 53.95398}
   m_SizeDelta: {x: 659.9, y: 187.2183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913020880
@@ -32198,8 +32199,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 24424457}
-  m_Father: {fileID: 58192780}
-  m_RootOrder: 7
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -32267,9 +32268,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 58192781}
-        m_TargetAssemblyTypeName: DialogButton, Assembly-CSharp
-        m_MethodName: buttonNextLevel
+      - m_Target: {fileID: 98968015}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: nextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37482,13 +37483,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 422282735}
-  m_RootOrder: 0
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 171, y: -208}
+  m_SizeDelta: {x: -2710, y: -1190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1039894187
 MonoBehaviour:
@@ -47877,8 +47878,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 58192780}
-  m_RootOrder: 2
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -57354,8 +57355,8 @@ RectTransform:
   m_Children:
   - {fileID: 315922616}
   - {fileID: 138663692}
-  m_Father: {fileID: 58192780}
-  m_RootOrder: 8
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -67413,12 +67414,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 58192780}
-  m_RootOrder: 1
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0.000019073}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1678.8, y: 1017.3823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876495899
@@ -69583,14 +69584,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 302348952}
-  m_Father: {fileID: 58192780}
-  m_RootOrder: 5
+  m_Children: []
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128, y: -212.97}
+  m_AnchoredPosition: {x: -128, y: -212.97003}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932163251
@@ -69637,9 +69637,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 58192781}
-        m_TargetAssemblyTypeName: DialogButton, Assembly-CSharp
-        m_MethodName: buttonMenuGame
+      - m_Target: {fileID: 98968015}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: MenuGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -71097,12 +71097,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 58192780}
-  m_RootOrder: 3
+  m_Father: {fileID: 98968012}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -379.95, y: 53.954}
+  m_AnchoredPosition: {x: -379.94995, y: 53.95398}
   m_SizeDelta: {x: 659.9, y: 187.2183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987972411

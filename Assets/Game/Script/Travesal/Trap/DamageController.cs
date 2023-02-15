@@ -6,6 +6,7 @@ public class DamageController : MonoBehaviour
     [SerializeField] private HealthManager healthManager;
 
     private void OnTriggerEnter2D(Collider2D collision)
+    
     {
         Debug.Log("Collision: " + collision.name);
         if (collision.CompareTag("Player"))

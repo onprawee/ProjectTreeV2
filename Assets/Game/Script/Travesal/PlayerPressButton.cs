@@ -18,22 +18,14 @@ public class PlayerPressButton : MonoBehaviour
     public Transform keyFollowPoint;
     public Key[] followingKey;
 
-
-    //Dialog Box
-    public Button buttonMenuGame, buttonTryAgain, buttonNext;
-    // private Text orderTitle, orderText;
-    public Text textStatus;
-    public GameObject dialogBox, ScreenBlur;
-
+    //GameOverScreen
+    public GameOverScreen gameOverScreen;
 
     void Start()
     {
         //Press&Close Button Light
         buttonClose = GameObject.Find("ButtonClose").GetComponent<Button>();
         buttonOpen = GameObject.Find("ButtonOpen").GetComponent<Button>();
-
-        // buttonClose.gameObject.SetActive(false);
-        // buttonOpen.gameObject.SetActive(false);
 
         for (int i = 0; i < button.Length; i++)
         {
@@ -43,26 +35,9 @@ public class PlayerPressButton : MonoBehaviour
             lightOff[i].SetActive(true);
             lightOn[i].SetActive(false);
 
-            // imageOff[i].SetActive(true);
-            // imageOn[i].SetActive(false);
         }
 
         orderedNode = new List<String>();
-
-
-        // orderTitle = GameObject.Find("OrderTitle").GetComponent<Text>();
-        // orderText = GameObject.Find("OrderText").GetComponent<Text>();
-
-        buttonMenuGame.gameObject.SetActive(false);
-        buttonTryAgain.gameObject.SetActive(false);
-        buttonNext.gameObject.SetActive(false);
-
-        // orderTitle.gameObject.SetActive(false);
-        // orderText.gameObject.SetActive(false);
-
-        dialogBox.SetActive(false);
-        ScreenBlur.SetActive(false);
-
 
     }
 
@@ -89,33 +64,27 @@ public class PlayerPressButton : MonoBehaviour
         //เช็คว่าเดินทางครบทุกโหนดหรือยัง
         if (result.Length == answer.Length)
         {
-            dialogBox.SetActive(true);
-            ScreenBlur.SetActive(true);
-            //Set Text
-            // orderTitle.gameObject.SetActive(true);
-            // orderText.gameObject.SetActive(true);
-            // orderText.text = result;
+            Debug.Log("You're complete the path");
 
-            buttonMenuGame.gameObject.SetActive(true);
             if (result == answer)
             {
-
-                textStatus.text = "ลำดับการเดินทางถูกต้อง";
-
-                buttonNext.gameObject.SetActive(true);
-
+                gameOverScreen.Setup("ลำดับการเดินทางถูกต้อง");
+                gameOverScreen.buttonRestart.gameObject.SetActive(false);
+                gameOverScreen.buttonMenu.gameObject.SetActive(true);
+                gameOverScreen.buttonnext.gameObject.SetActive(true);
             }
             else
             {
-                textStatus.text = "ลำดับการเดินทางไม่ถูกต้อง";
-                buttonTryAgain.gameObject.SetActive(true);
-
-
+                gameOverScreen.Setup("ลำดับการเดินทางไม่ถูกต้อง");
+                gameOverScreen.buttonRestart.gameObject.SetActive(true);
+                gameOverScreen.buttonMenu.gameObject.SetActive(true);
+                gameOverScreen.buttonnext.gameObject.SetActive(false);
             }
+
         }
         else
         {
-            textStatus.text = "";
+            Debug.Log("You're not complete the path");
         }
     }
 
