@@ -32,8 +32,8 @@ public class GameOverScreen : MonoBehaviour
         {
             PlayerPrefs.SetInt("LevelsUnlockPreorder", currentLevel + 1);
         }
-
         Debug.Log("Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
+        SceneManager.LoadScene(currentLevel + 1);
     }
     void MenuGame()
     {
