@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     bool isGrounded, canDoubleJump;
     public float delayBeforeDoubleJump, verticalMove;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         btnLeft = GameObject.Find("ButtonLeft").GetComponent<Button>();
         btnRight = GameObject.Find("ButtonRight").GetComponent<Button>();
         btnJump = GameObject.Find("ButtonJump").GetComponent<Button>();
+
 
     }
     void Update()

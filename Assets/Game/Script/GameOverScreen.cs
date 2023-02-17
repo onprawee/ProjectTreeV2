@@ -12,7 +12,6 @@ public class GameOverScreen : MonoBehaviour
     {
         gameObject.SetActive(true);
         textStatus.text = txtstatus.ToString();
-
     }
 
     void RestartButton()
