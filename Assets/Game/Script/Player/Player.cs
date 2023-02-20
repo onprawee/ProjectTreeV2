@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
     public GameStarScreen gameStarScreen;
 
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +26,8 @@ public class Player : MonoBehaviour
         anim.SetBool("isRunning", false);
         anim.SetBool("isFalling", false);
         anim.SetBool("isJumping", false);
+
+        anim.SetBool("isHurt", false);
 
         moveLeft = false;
         moveRight = false;
@@ -93,15 +97,33 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "Ground")
         {
             isGrounded = true;
             canDoubleJump = false;
             anim.SetBool("isFalling", false);
             anim.SetBool("isJumping", false);
+            //anim.SetBool("isHurt", false);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Trap")
+        {
+            anim.SetBool("isHurt", true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Trap")
+        {
+            anim.SetBool("isHurt", false);
+        }
+    }
+
     public void jumpButton()
     {
         if (isGrounded)
@@ -113,11 +135,12 @@ public class Player : MonoBehaviour
         }
         if (canDoubleJump)
         {
-
             rb.velocity = Vector2.up * (jumpSpeed / 2);
             canDoubleJump = false;
         }
     }
+
+
     void EnableDoubleJump()
     {
         canDoubleJump = true;
