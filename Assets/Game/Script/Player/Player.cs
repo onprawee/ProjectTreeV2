@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     bool isGrounded, canDoubleJump;
     public float delayBeforeDoubleJump, verticalMove;
 
+    public GameStarScreen gameStarScreen;
 
     void Start()
     {
@@ -32,6 +33,8 @@ public class Player : MonoBehaviour
         btnLeft = GameObject.Find("ButtonLeft").GetComponent<Button>();
         btnRight = GameObject.Find("ButtonRight").GetComponent<Button>();
         btnJump = GameObject.Find("ButtonJump").GetComponent<Button>();
+
+        gameStarScreen.Setup();
 
 
     }
