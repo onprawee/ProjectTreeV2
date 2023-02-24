@@ -5,9 +5,9 @@ public class GamePauseScreen : MonoBehaviour
 {
     public Button tutorialButton, questButton, exitButton, resumeButton;
 
-    // public void PauseScreen(){
-    //     gameObject.SetActive(true);
-    // }
+    public GameStarScreen gameStarScreen;
+    public TutorialDialogue tutorialDialogue;
+
     public void PauseScreenActive()
     {
         gameObject.SetActive(true);
@@ -16,11 +16,16 @@ public class GamePauseScreen : MonoBehaviour
     public void TutorialButton()
     {
         //Tutorial
+        tutorialDialogue.gameObject.SetActive(true);
+        gameObject.SetActive(false);
         Debug.Log("Tutorial");
     }
     public void QuestButton()
     {
         //Quest
+        gameStarScreen.Setup();
+        gameObject.SetActive(false);
+
         Debug.Log("Quest");
     }
     public void ExitButton()

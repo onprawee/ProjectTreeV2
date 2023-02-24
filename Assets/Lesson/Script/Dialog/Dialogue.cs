@@ -21,3 +21,4 @@ public class CustomGameObject
     public bool isForever; // รูปภาพจะอยู่ถาวร จนถึงประโยคสุดท้ายจบเลยไหม?
     public GameObject gameObject;
 }
+
