@@ -14,7 +14,7 @@ public class GameOverScreen : MonoBehaviour
         textStatus.text = txtstatus.ToString();
     }
 
-    void RestartButton()
+    public void RestartButton()
     {
         //Restart Scene
         new WaitForSeconds(5);
@@ -22,7 +22,7 @@ public class GameOverScreen : MonoBehaviour
     }
 
     //ปุ่ม Next Level 
-    void nextLevel()
+    public void nextLevel()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
@@ -34,7 +34,7 @@ public class GameOverScreen : MonoBehaviour
         Debug.Log("Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
         SceneManager.LoadScene(currentLevel + 1);
     }
-    void MenuGame()
+    public void MenuGame()
     {
         SceneManager.LoadScene("Menu_Game");
     }

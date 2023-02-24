@@ -7441,7 +7441,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 168812375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1126389834}
+        m_TargetAssemblyTypeName: GamePauseScreen, Assembly-CSharp
+        m_MethodName: PauseScreenActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &168812375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33612,9 +33624,8 @@ GameObject:
   - component: {fileID: 737909358}
   - component: {fileID: 737909357}
   - component: {fileID: 737909356}
-  - component: {fileID: 737909355}
   m_Layer: 5
-  m_Name: ButtonQuiz
+  m_Name: ButtonExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33640,27 +33651,6 @@ RectTransform:
   m_AnchoredPosition: {x: 253.95871, y: 0.99998474}
   m_SizeDelta: {x: 217.2585, y: 217.26}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &737909355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737909353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &737909356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33704,7 +33694,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 737909357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1126389834}
+        m_TargetAssemblyTypeName: GamePauseScreen, Assembly-CSharp
+        m_MethodName: ExitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &737909357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47661,9 +47663,8 @@ GameObject:
   - component: {fileID: 1061830239}
   - component: {fileID: 1061830238}
   - component: {fileID: 1061830237}
-  - component: {fileID: 1061830236}
   m_Layer: 5
-  m_Name: ButtonTutorial
+  m_Name: ButtonQuest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47689,27 +47690,6 @@ RectTransform:
   m_AnchoredPosition: {x: -26.294384, y: 0.99998474}
   m_SizeDelta: {x: 217.2585, y: 217.26}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1061830236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1061830234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &1061830237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47753,7 +47733,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1061830238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1126389834}
+        m_TargetAssemblyTypeName: GamePauseScreen, Assembly-CSharp
+        m_MethodName: QuestButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1061830238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49843,13 +49835,14 @@ GameObject:
   - component: {fileID: 1126389831}
   - component: {fileID: 1126389833}
   - component: {fileID: 1126389832}
+  - component: {fileID: 1126389834}
   m_Layer: 5
-  m_Name: ScreenBlur_End
+  m_Name: ScreenBlur_Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1126389831
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49914,6 +49907,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126389830}
   m_CullTransparentMesh: 1
+--- !u!114 &1126389834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126389830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab36040a4c87cd41b80004463b4aad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialButton: {fileID: 1765261543}
+  questButton: {fileID: 1061830237}
+  exitButton: {fileID: 737909356}
+  resumeButton: {fileID: 1361649986}
 --- !u!1 &1127987948
 GameObject:
   m_ObjectHideFlags: 0
@@ -59423,7 +59432,6 @@ GameObject:
   - component: {fileID: 1361649988}
   - component: {fileID: 1361649987}
   - component: {fileID: 1361649986}
-  - component: {fileID: 1361649985}
   m_Layer: 5
   m_Name: ButtonResume
   m_TagString: Untagged
@@ -59452,27 +59460,6 @@ RectTransform:
   m_AnchoredPosition: {x: -26.294, y: -320}
   m_SizeDelta: {x: 505.9231, y: 248.1944}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1361649985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361649983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &1361649986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59516,7 +59503,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1361649987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1126389834}
+        m_TargetAssemblyTypeName: GamePauseScreen, Assembly-CSharp
+        m_MethodName: ResumeButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1361649987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77644,9 +77643,8 @@ GameObject:
   - component: {fileID: 1765261545}
   - component: {fileID: 1765261544}
   - component: {fileID: 1765261543}
-  - component: {fileID: 1765261542}
   m_Layer: 5
-  m_Name: ButtonQuest
+  m_Name: ButtonTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77672,27 +77670,6 @@ RectTransform:
   m_AnchoredPosition: {x: -312, y: 1}
   m_SizeDelta: {x: 217.2585, y: 217.26}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1765261542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765261540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &1765261543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77736,7 +77713,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1765261544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1126389834}
+        m_TargetAssemblyTypeName: GamePauseScreen, Assembly-CSharp
+        m_MethodName: TutorialButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1765261544
 MonoBehaviour:
   m_ObjectHideFlags: 0
