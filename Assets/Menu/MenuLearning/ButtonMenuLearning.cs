@@ -11,12 +11,13 @@ public class ButtonMenuLearning : MonoBehaviour
     }
     public void ButtonBinaryTree()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("binarytree");
     }
     public void ButtonTreeTraversal()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Treetra");
     }
+   
     // Start is called before the first frame update
     void Start()
     {
