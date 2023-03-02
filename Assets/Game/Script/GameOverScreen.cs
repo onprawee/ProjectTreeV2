@@ -6,7 +6,7 @@ public class GameOverScreen : MonoBehaviour
 {
     public Text textStatus;
 
-    public Button buttonRestart, buttonMenu, buttonnext;
+    public Button buttonRestart, buttonMenuUnlock, buttonnext, buttonMenu;
 
     public void Setup(string txtstatus)
     {
@@ -34,8 +34,20 @@ public class GameOverScreen : MonoBehaviour
         Debug.Log("Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
         SceneManager.LoadScene(currentLevel + 1);
     }
+    public void MenuGameUnlock()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        if (currentLevel >= PlayerPrefs.GetInt("LevelsUnlockPreorder"))
+        {
+            PlayerPrefs.SetInt("LevelsUnlockPreorder", currentLevel + 1);
+        }
+        Debug.Log("Menu Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
+        SceneManager.LoadScene("Menu_Game");
+    }
+
     public void MenuGame()
     {
         SceneManager.LoadScene("Menu_Game");
     }
+
 }

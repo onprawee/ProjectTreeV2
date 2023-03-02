@@ -23,7 +23,6 @@ public class LevelPreorderManager : MonoBehaviour
         for (int i = 0; i < levelsUnlock; i++)
         {
             levelButtons[i].interactable = true;
-
         }
 
     }

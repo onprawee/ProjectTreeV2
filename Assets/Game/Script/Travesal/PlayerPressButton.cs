@@ -70,7 +70,9 @@ public class PlayerPressButton : MonoBehaviour
             {
                 gameOverScreen.Setup("ลำดับการเดินทางถูกต้อง");
                 gameOverScreen.buttonRestart.gameObject.SetActive(false);
-                gameOverScreen.buttonMenu.gameObject.SetActive(true);
+                gameOverScreen.buttonMenu.gameObject.SetActive(false);
+
+                gameOverScreen.buttonMenuUnlock.gameObject.SetActive(true);
                 gameOverScreen.buttonnext.gameObject.SetActive(true);
             }
             else
@@ -78,6 +80,8 @@ public class PlayerPressButton : MonoBehaviour
                 gameOverScreen.Setup("ลำดับการเดินทางไม่ถูกต้อง");
                 gameOverScreen.buttonRestart.gameObject.SetActive(true);
                 gameOverScreen.buttonMenu.gameObject.SetActive(true);
+
+                gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
                 gameOverScreen.buttonnext.gameObject.SetActive(false);
             }
 

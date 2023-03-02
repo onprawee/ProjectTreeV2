@@ -32,6 +32,7 @@ public class HealthManager : MonoBehaviour
             gameOverScreen.Setup("พลังชีวิตหมดแล้ว");
             gameOverScreen.buttonRestart.gameObject.SetActive(true);
             gameOverScreen.buttonMenu.gameObject.SetActive(true);
+            gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
             gameOverScreen.buttonnext.gameObject.SetActive(false);
         }
     }
