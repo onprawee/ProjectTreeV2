@@ -32,5 +32,10 @@ public class LevelPreorderManager : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
     }
 
+    public void MenuHome()
+    {
+        SceneManager.LoadScene("Menu_Home");
+    }
+
 
 }

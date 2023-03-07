@@ -22,7 +22,7 @@ public class GameOverScreen : MonoBehaviour
     }
 
     //ปุ่ม Next Level 
-    public void nextLevel()
+    public void nextLevelPreorder()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
@@ -34,7 +34,7 @@ public class GameOverScreen : MonoBehaviour
         Debug.Log("Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
         SceneManager.LoadScene(currentLevel + 1);
     }
-    public void MenuGameUnlock()
+    public void MenuGameUnlockPreorder()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
         if (currentLevel >= PlayerPrefs.GetInt("LevelsUnlockPreorder"))
@@ -49,5 +49,6 @@ public class GameOverScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Menu_Game");
     }
+
 
 }
