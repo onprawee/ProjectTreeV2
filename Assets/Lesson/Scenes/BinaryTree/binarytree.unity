@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 187688644}
   - component: {fileID: 187688643}
   - component: {fileID: 187688642}
+  - component: {fileID: 187688645}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -299,6 +300,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187688645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187688641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &220208310
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +696,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &269772953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 269772956}
+  - component: {fileID: 269772955}
+  - component: {fileID: 269772954}
+  m_Layer: 5
+  m_Name: "\u0E1E\u0E35\u0E23\u0E30\u0E21\u0E34\u0E14"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &269772954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269772953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.8814016, b: 0.30817604, a: 0.5686275}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2d0033b4f1b2a5b41a6902b21bd72293, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &269772955
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269772953}
+  m_CullTransparentMesh: 1
+--- !u!224 &269772956
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269772953}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1306.505, y: 773.271}
+  m_SizeDelta: {x: 509.431, y: 464}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &279953255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,16 +1467,18 @@ MonoBehaviour:
     - preObject:
       - isForever: 0
         gameObject: {fileID: 1774109814}
-      sentence: "Binary Tree \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07\u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E17\u0E35\u0E48\u0E21\u0E35\u0E25\u0E39\u0E01\u0E44\u0E14\u0E49\u0E44\u0E21\u0E48\u0E40\u0E01\u0E34\u0E19
-        2 \u0E42\u0E2B\u0E19\u0E14      "
+      sentence: "\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35\u0E17\u0E23\u0E35 (Binary Tree)
+        \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07 \u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E17\u0E35\u0E48\u0E21\u0E35\u0E25\u0E39\u0E01\u0E44\u0E14\u0E49\u0E44\u0E21\u0E48\u0E40\u0E01\u0E34\u0E19
+        2 \u0E42\u0E2B\u0E19\u0E14"
       postObject: []
     - preObject:
       - isForever: 0
         gameObject: {fileID: 1774109814}
       - isForever: 0
         gameObject: {fileID: 692376511}
-      sentence: "\u0E42\u0E14\u0E22\u0E42\u0E2B\u0E19\u0E14\u0E22\u0E48\u0E2D\u0E22\u0E14\u0E49\u0E32\u0E19\u0E0B\u0E49\u0E32\u0E22\u0E08\u0E30\u0E40\u0E23\u0E35\u0E22\u0E01\u0E27\u0E48\u0E32\u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E22\u0E48\u0E2D\u0E22\u0E14\u0E49\u0E32\u0E19\u0E0B\u0E49\u0E32\u0E22(Left
-        Subtree)"
+      sentence: "\u0E42\u0E14\u0E22\u0E42\u0E2B\u0E19\u0E14\u0E22\u0E48\u0E2D\u0E22\u0E14\u0E49\u0E32\u0E19\u0E0B\u0E49\u0E32\u0E22\u0E08\u0E30\u0E40\u0E23\u0E35\u0E22\u0E01\u0E27\u0E48\u0E32
+        \u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E22\u0E48\u0E2D\u0E22\u0E14\u0E49\u0E32\u0E19\u0E0B\u0E49\u0E32\u0E22
+        (Left Subtree)"
       postObject:
       - isForever: 0
         gameObject: {fileID: 1217319353}
@@ -1388,8 +1500,8 @@ MonoBehaviour:
         gameObject: {fileID: 1217319353}
       - isForever: 0
         gameObject: {fileID: 527027313}
-      sentence: "\u0E41\u0E2A\u0E14\u0E07\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E02\u0E2D\u0E07
-        Binary Tree \u0E17\u0E35\u0E48\u0E21\u0E35\u0E17\u0E31\u0E49\u0E07\u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E22\u0E48\u0E2D\u0E22\u0E14\u0E49\u0E32\u0E19\u0E0B\u0E49\u0E32\u0E22\u0E41\u0E25\u0E30\u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E22\u0E48\u0E2D\u0E22\u0E14\u0E49\u0E32\u0E19\u0E02\u0E27\u0E32 "
+      sentence: "\u0E41\u0E2A\u0E14\u0E07\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35\u0E17\u0E23\u0E35\u0E17\u0E35\u0E48\u0E21\u0E35\u0E17\u0E31\u0E49\u0E07\u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E22\u0E48\u0E2D\u0E22\u0E14\u0E49\u0E32\u0E19\u0E0B\u0E49\u0E32\u0E22
+        \u0E41\u0E25\u0E30\u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E22\u0E48\u0E2D\u0E22\u0E14\u0E49\u0E32\u0E19\u0E02\u0E27\u0E32 "
       postObject: []
     - preObject:
       - isForever: 0
@@ -1398,8 +1510,8 @@ MonoBehaviour:
         gameObject: {fileID: 1217319353}
       - isForever: 0
         gameObject: {fileID: 527027313}
-      sentence: "\u0E41\u0E15\u0E48\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E41\u0E1A\u0E1A
-        Binary Tree \u0E44\u0E21\u0E48\u0E08\u0E33\u0E40\u0E1B\u0E47\u0E19\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E21\u0E35\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E23\u0E39\u0E1B\u0E41\u0E1A\u0E1A\u0E19\u0E35\u0E49\u0E40\u0E2A\u0E21\u0E2D\u0E44\u0E1B"
+      sentence: "\u0E41\u0E15\u0E48\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E41\u0E1A\u0E1A\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35\u0E17\u0E23\u0E35\u0E44\u0E21\u0E48\u0E08\u0E33\u0E40\u0E1B\u0E47\u0E19\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E21\u0E35
+        \u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E23\u0E39\u0E1B\u0E41\u0E1A\u0E1A\u0E19\u0E35\u0E49\u0E40\u0E2A\u0E21\u0E2D\u0E44\u0E1B"
       postObject: []
     - preObject:
       - isForever: 0
@@ -1411,28 +1523,25 @@ MonoBehaviour:
         gameObject: {fileID: 1721275551}
       - isForever: 0
         gameObject: {fileID: 1007372812}
-      sentence: "\u0E2B\u0E23\u0E37\u0E2D\u0E14\u0E49\u0E32\u0E19\u0E02\u0E27\u0E32\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48\u0E21\u0E35\u0E40\u0E25\u0E22(Empty
-        Tree)\u0E01\u0E47\u0E44\u0E14\u0E49"
+      sentence: "\u0E2B\u0E23\u0E37\u0E2D\u0E21\u0E35\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E14\u0E49\u0E32\u0E19\u0E02\u0E27\u0E32\u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48\u0E21\u0E35\u0E40\u0E25\u0E22
+        (Empty Tree)\u0E01\u0E47\u0E44\u0E14\u0E49"
       postObject: []
     - preObject:
       - isForever: 0
         gameObject: {fileID: 771761130}
-      sentence: "Binary Tree \u0E41\u0E1A\u0E1A\u0E2A\u0E21\u0E1A\u0E39\u0E23\u0E13\u0E4C
-        (Complete Binary tree) \u0E40\u0E1B\u0E47\u0E19 Binary tree \u0E17\u0E35\u0E48\u0E21\u0E35\u0E40\u0E15\u0E47\u0E21\u0E17\u0E38\u0E01
-        Level"
+      sentence: "\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35\u0E17\u0E23\u0E35\u0E41\u0E1A\u0E1A\u0E2A\u0E21\u0E1A\u0E39\u0E23\u0E13\u0E4C
+        (Complete Binary tree) \u0E40\u0E1B\u0E47\u0E19\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35\u0E17\u0E23\u0E35\u0E17\u0E35\u0E48\u0E21\u0E35\u0E40\u0E15\u0E47\u0E21\u0E17\u0E38\u0E01\u0E40\u0E25\u0E40\u0E27\u0E25"
       postObject: []
     - preObject:
       - isForever: 0
         gameObject: {fileID: 1220430621}
-      sentence: "Binary Tree \u0E40\u0E01\u0E37\u0E2D\u0E1A\u0E2A\u0E21\u0E1A\u0E39\u0E23\u0E13\u0E4C
-        (Nearly Complete Binary Tree) \u0E40\u0E1B\u0E47\u0E19 Binary Tree \u0E17\u0E35\u0E48\u0E21\u0E35
-        node \u0E40\u0E15\u0E47\u0E21\u0E17\u0E38\u0E01 Level"
+      sentence: "\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35\u0E17\u0E23\u0E35\u0E40\u0E01\u0E37\u0E2D\u0E1A\u0E2A\u0E21\u0E1A\u0E39\u0E23\u0E13\u0E4C
+        (Nearly Complete Binary Tree) \u0E40\u0E1B\u0E47\u0E19\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35\u0E17\u0E35\u0E48\u0E21\u0E35\u0E42\u0E2B\u0E19\u0E14\u0E40\u0E15\u0E47\u0E21\u0E17\u0E38\u0E01\u0E40\u0E25\u0E40\u0E27\u0E25\u0E22\u0E01\u0E40\u0E27\u0E49\u0E19\u0E40\u0E25\u0E40\u0E27\u0E25\u0E2A\u0E38\u0E14\u0E17\u0E49\u0E32\u0E22"
       postObject: []
     - preObject:
       - isForever: 0
         gameObject: {fileID: 1220430621}
-      sentence: "\u0E22\u0E01\u0E40\u0E27\u0E49\u0E19 Level \u0E2A\u0E38\u0E14\u0E17\u0E49\u0E32\u0E22
-        \u0E41\u0E25\u0E30 Node \u0E43\u0E19 Level \u0E2A\u0E38\u0E14\u0E17\u0E49\u0E32\u0E22\u0E2D\u0E22\u0E39\u0E48\u0E40\u0E23\u0E35\u0E22\u0E07\u0E01\u0E31\u0E19\u0E17\u0E32\u0E07\u0E0B\u0E49\u0E32\u0E22"
+      sentence: "\u0E41\u0E25\u0E30\u0E42\u0E2B\u0E19\u0E14\u0E43\u0E19\u0E40\u0E25\u0E40\u0E27\u0E25\u0E2A\u0E38\u0E14\u0E17\u0E49\u0E32\u0E22\u0E2D\u0E22\u0E39\u0E48\u0E40\u0E23\u0E35\u0E22\u0E07\u0E01\u0E31\u0E19\u0E17\u0E32\u0E07\u0E0B\u0E49\u0E32\u0E22"
       postObject: []
   delay: 0.05
   SceneB: 
@@ -2662,7 +2771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0E04\u0E27\u0E32\u0E21\u0E2B\u0E21\u0E32\u0E22\u0E02\u0E2D\u0E07\u0E15\u0E49\u0E19\u0E44\u0E21\u0E49\u0E41\u0E1A\u0E1A\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35"
+  m_Text: "\u0E04\u0E27\u0E32\u0E21\u0E2B\u0E21\u0E32\u0E22\u0E02\u0E2D\u0E07\u0E44\u0E1A\u0E19\u0E32\u0E23\u0E35\u0E17\u0E23\u0E35"
 --- !u!222 &1026465846
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4826,7 +4935,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a0899bff096297140948041aa88db273, type: 3}
-    m_FontSize: 70
+    m_FontSize: 65
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 5
