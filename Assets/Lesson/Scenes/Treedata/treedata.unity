@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 187688644}
   - component: {fileID: 187688643}
   - component: {fileID: 187688642}
+  - component: {fileID: 187688645}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -375,6 +376,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187688645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187688641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &220208310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,15 +1595,10 @@ MonoBehaviour:
     - preObject:
       - isForever: 1
         gameObject: {fileID: 1774109814}
-      sentence: "\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E41\u0E1A\u0E1A
-        Tree \u0E19\u0E31\u0E49\u0E19\u0E01\u0E47\u0E04\u0E37\u0E2D\u0E01\u0E32\u0E23\u0E40\u0E2D\u0E32
-        Node \u0E21\u0E32\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\u0E15\u0E48\u0E2D\u0E01\u0E31\u0E19"
+      sentence: "\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E41\u0E1A\u0E1A\u0E15\u0E49\u0E19\u0E44\u0E21\u0E49(Tree)\u0E19\u0E31\u0E49\u0E19\u0E01\u0E47\u0E04\u0E37\u0E2D\u0E01\u0E32\u0E23\u0E40\u0E2D\u0E32\u0E42\u0E2B\u0E19\u0E14\u0E21\u0E32\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\u0E15\u0E48\u0E2D\u0E01\u0E31\u0E19"
       postObject: []
     - preObject: []
-      sentence: "\u0E42\u0E14\u0E22 Node \u0E41\u0E15\u0E48\u0E25\u0E48\u0E30\u0E15\u0E31\u0E27\u0E08\u0E30\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\u0E44\u0E1B\u0E22\u0E31\u0E07
-        Node \u0E16\u0E31\u0E14\u0E46 \u0E44\u0E1B\u0E44\u0E14\u0E49\u0E2B\u0E25\u0E32\u0E22\u0E15\u0E31\u0E27
-        \u0E41\u0E25\u0E30\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\u0E41\u0E1A\u0E1A\u0E40\u0E1B\u0E47\u0E19\u0E0A\u0E31\u0E49\u0E19\u0E46
-        \u0E25\u0E07\u0E44\u0E1B\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E22\u0E46"
+      sentence: "\u0E42\u0E14\u0E22\u0E42\u0E2B\u0E19\u0E14\u0E41\u0E15\u0E48\u0E25\u0E30\u0E15\u0E31\u0E27\u0E08\u0E30\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\u0E44\u0E1B\u0E22\u0E31\u0E07\u0E42\u0E2B\u0E19\u0E14\u0E16\u0E31\u0E14\u0E46\u0E44\u0E1B\u0E44\u0E14\u0E49\u0E2B\u0E25\u0E32\u0E22\u0E15\u0E31\u0E27\u0E41\u0E25\u0E30\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\u0E41\u0E1A\u0E1A\u0E40\u0E1B\u0E47\u0E19\u0E0A\u0E31\u0E49\u0E19\u0E46\u0E25\u0E07\u0E44\u0E1B\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E22\u0E46"
       postObject:
       - isForever: 1
         gameObject: {fileID: 1983731313}
@@ -1581,8 +1610,7 @@ MonoBehaviour:
       - isForever: 1
         gameObject: {fileID: 692376511}
     - preObject: []
-      sentence: "Branch \u0E17\u0E33\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48\u0E43\u0E19\u0E01\u0E32\u0E23\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21
-        node \u0E40\u0E02\u0E49\u0E32\u0E14\u0E49\u0E27\u0E22\u0E01\u0E31\u0E19"
+      sentence: "Branch \u0E17\u0E33\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48\u0E43\u0E19\u0E01\u0E32\u0E23\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E21\u0E42\u0E2B\u0E19\u0E14\u0E40\u0E02\u0E49\u0E32\u0E14\u0E49\u0E27\u0E22\u0E01\u0E31\u0E19"
       postObject:
       - isForever: 0
         gameObject: {fileID: 1103922883}
@@ -5536,8 +5564,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -202.45093, y: -385.83}
-  m_SizeDelta: {x: 1653.3982, y: 332.48}
+  m_AnchoredPosition: {x: -126.72, y: -385.83}
+  m_SizeDelta: {x: 1804.9, y: 332.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2016571012
 GameObject:
