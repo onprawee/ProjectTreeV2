@@ -43,7 +43,7 @@ public class ButtonMenuGame : MonoBehaviour
 
     public void Subject_Traversal_Inorder()
     {
-        // SceneManager.LoadScene("InorderLevel_Traversal");
+        SceneManager.LoadScene("InorderLevel_Traversal");
     }
 
     public void Subject_Traversal_Postorder()

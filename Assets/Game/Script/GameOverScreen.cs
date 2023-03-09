@@ -33,6 +33,7 @@ public class GameOverScreen : MonoBehaviour
         }
         Debug.Log("Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
         SceneManager.LoadScene(currentLevel + 1);
+    
     }
     public void MenuGameUnlockPreorder()
     {
@@ -43,6 +44,7 @@ public class GameOverScreen : MonoBehaviour
         }
         Debug.Log("Menu Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
         SceneManager.LoadScene("Menu_Game");
+
     }
 
     public void MenuGame()
