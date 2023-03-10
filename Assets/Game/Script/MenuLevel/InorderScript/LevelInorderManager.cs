@@ -11,7 +11,7 @@ public class LevelInorderManager : MonoBehaviour
     void Start()
     {
 
-        inorderLevelUnlock = PlayerPrefs.GetInt("LevelsUnlockInorder", 1) % 24;
+        inorderLevelUnlock = PlayerPrefs.GetInt("LevelsUnlockInorder", 1) % 20;
         Debug.Log("LevelsUnlockInorder" + inorderLevelUnlock);
 
         for (int i = 0; i < levelButtons.Length; i++)

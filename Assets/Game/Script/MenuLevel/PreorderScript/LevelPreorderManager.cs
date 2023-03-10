@@ -12,7 +12,7 @@ public class LevelPreorderManager : MonoBehaviour
         //เช่น Level ที่ 1 ของ Preorder มี Index อยู่ที่ 15 => 15%14 = 1 
 
         //ต้องสร้างไฟล์แยกในแต่ละเรื่อง และตั้งชื่อ "LevelsUnlock" โดยระบุบ
-        levelsUnlock = PlayerPrefs.GetInt("LevelsUnlockPreorder", 1) % 13;
+        levelsUnlock = PlayerPrefs.GetInt("LevelsUnlockPreorder", 1) % 9;
         Debug.Log("LevelsUnlockPreorder" + levelsUnlock);
 
         for (int i = 0; i < levelButtons.Length; i++)
