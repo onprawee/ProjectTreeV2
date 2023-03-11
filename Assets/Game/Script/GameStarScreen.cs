@@ -16,6 +16,7 @@ public class GameStarScreen : MonoBehaviour
     {
         // new WaitForSeconds(5);
         gameObject.SetActive(false);
+        AudioManager.instance.PlaySFX("Click");
         Debug.Log("Start");
     }
 

@@ -22,6 +22,6 @@ public class DamageController : MonoBehaviour
         healthManager.playerHealth = healthManager.playerHealth - trapsDamage;
         healthManager.UpdateHealth();
         Debug.Log("Player Health: " + healthManager.playerHealth);
-        AudioManager.instance.PlaySFX("Attack");
+        AudioManager.instance.PlaySFX("Hurt");
     }
 }

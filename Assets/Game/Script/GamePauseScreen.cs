@@ -12,12 +12,15 @@ public class GamePauseScreen : MonoBehaviour
 
     public void PauseScreenActive()
     {
+        AudioManager.instance.PlaySFX("Click");
         gameObject.SetActive(true);
+
     }
 
     public void TutorialButton()
     {
         //Tutorial
+        AudioManager.instance.PlaySFX("Click");
         tutorialDialogue.gameObject.SetActive(true);
         gameObject.SetActive(false);
         Debug.Log("Tutorial");
@@ -25,6 +28,7 @@ public class GamePauseScreen : MonoBehaviour
     public void QuestButton()
     {
         //Quest
+        AudioManager.instance.PlaySFX("Click");
         gameStarScreen.Setup();
         gameObject.SetActive(false);
 
@@ -33,11 +37,13 @@ public class GamePauseScreen : MonoBehaviour
     public void ExitButton()
     {
         //Exit
+        AudioManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("Menu_Game");
     }
     public void ResumeButton()
     {
         //Resume
+        AudioManager.instance.PlaySFX("Click");
         Debug.Log("Resume");
         gameObject.SetActive(false);
     }

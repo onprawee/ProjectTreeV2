@@ -139,6 +139,7 @@ public class PlayerPressButton : MonoBehaviour
         string buttonName = pressedButton[nodeIndex].name;
         string lastChar = buttonName.Substring(buttonName.Length - 1);
         orderedNode.Add(lastChar);
+        AudioManager.instance.PlaySFX("Open_Close");
 
         displayNode();
     }
@@ -152,6 +153,7 @@ public class PlayerPressButton : MonoBehaviour
         string buttonName = pressedButton[nodeIndex].name;
         string lastChar = buttonName.Substring(buttonName.Length - 1);
         orderedNode.Remove(lastChar);
+        AudioManager.instance.PlaySFX("Open_Close");
 
         displayNode();
     }

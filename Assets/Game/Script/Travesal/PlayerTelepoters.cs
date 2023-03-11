@@ -23,6 +23,7 @@ public class PlayerTelepoters : MonoBehaviour
         {
             Teleporters teleporter = currentTeleporter.GetComponent<Teleporters>();
             transform.position = teleporter.GetDestination().position;
+            AudioManager.instance.PlaySFX("Teleport");
 
             //Debug.Log("Teleporting");
         }
