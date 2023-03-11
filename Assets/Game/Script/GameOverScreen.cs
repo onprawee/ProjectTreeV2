@@ -21,7 +21,12 @@ public class GameOverScreen : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    //ปุ่ม Next Level 
+    public void MenuGame()
+    {
+        SceneManager.LoadScene("Menu_Game");
+    }
+
+    //Preorder
     public void nextLevelPreorder()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
@@ -33,7 +38,7 @@ public class GameOverScreen : MonoBehaviour
         }
         Debug.Log("Level" + PlayerPrefs.GetInt("LevelsUnlockPreorder") + "Unlocked");
         SceneManager.LoadScene(currentLevel + 1);
-    
+
     }
     public void MenuGameUnlockPreorder()
     {
@@ -46,11 +51,54 @@ public class GameOverScreen : MonoBehaviour
         SceneManager.LoadScene("Menu_Game");
 
     }
-
-    public void MenuGame()
+    //Inorder
+    public void nextLevelInorder()
     {
-        SceneManager.LoadScene("Menu_Game");
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentLevel >= PlayerPrefs.GetInt("LevelsUnlockInorder"))
+        {
+            PlayerPrefs.SetInt("LevelsUnlockInorder", currentLevel + 1);
+        }
+        SceneManager.LoadScene(currentLevel + 1);
     }
+
+    public void MenuGameUnlockInorder()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        if (currentLevel >= PlayerPrefs.GetInt("LevelsUnlockInorder"))
+        {
+            PlayerPrefs.SetInt("LevelsUnlockInorder", currentLevel + 1);
+        }
+        Debug.Log("Menu Level" + PlayerPrefs.GetInt("LevelsUnlockInorder") + "Unlocked");
+        SceneManager.LoadScene("Menu_Game");
+
+    }
+
+    //Postorder
+    public void nextLevelPostorder()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentLevel >= PlayerPrefs.GetInt("LevelsUnlockPostorder"))
+        {
+            PlayerPrefs.SetInt("LevelsUnlockPostorder", currentLevel + 1);
+        }
+        SceneManager.LoadScene(currentLevel + 1);
+    }
+
+    public void MenuGameUnlockPostorder()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        if (currentLevel >= PlayerPrefs.GetInt("LevelsUnlockPostorder"))
+        {
+            PlayerPrefs.SetInt("LevelsUnlockPostorder", currentLevel + 1);
+        }
+        Debug.Log("Menu Level" + PlayerPrefs.GetInt("LevelsUnlockPostorder") + "Unlocked");
+        SceneManager.LoadScene("Menu_Game");
+
+    }
+
 
 
 }

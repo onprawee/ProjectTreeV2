@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GamePauseScreen : MonoBehaviour
@@ -32,7 +33,7 @@ public class GamePauseScreen : MonoBehaviour
     public void ExitButton()
     {
         //Exit
-        Debug.Log("Exit");
+        SceneManager.LoadScene("Menu_Game");
     }
     public void ResumeButton()
     {

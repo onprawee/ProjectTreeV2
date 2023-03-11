@@ -7,21 +7,27 @@ public class LevelPostorderManager : MonoBehaviour
     int inorderLevelUnlock;
 
     public Button[] levelButtons;
+    public GameObject[] imagePostorderLock;
+    public GameObject[] textPostorderLevel;
+
 
     void Start()
     {
 
-        inorderLevelUnlock = PlayerPrefs.GetInt("LevelsUnlockPostorder", 1) % 20;
+        inorderLevelUnlock = PlayerPrefs.GetInt("LevelsUnlockPostorder", 1) % 24;
         Debug.Log("LevelsUnlockPostorder" + inorderLevelUnlock);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
             levelButtons[i].interactable = false;
+            imagePostorderLock[i].SetActive(true);
         }
 
         for (int i = 0; i < inorderLevelUnlock; i++)
         {
             levelButtons[i].interactable = true;
+            imagePostorderLock[i].SetActive(false);
+            textPostorderLevel[i].SetActive(true);
         }
 
     }
