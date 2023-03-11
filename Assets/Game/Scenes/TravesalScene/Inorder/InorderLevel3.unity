@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 17667029}
   - component: {fileID: 17667028}
   m_Layer: 5
-  m_Name: txt_9
+  m_Name: txt_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,7 +685,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 804933473}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1946,7 +1946,7 @@ RectTransform:
   m_Children:
   - {fileID: 1377593401}
   m_Father: {fileID: 236838161}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3879,7 +3879,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444421}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: pointerUpLeft
           m_Mode: 1
@@ -3895,7 +3895,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444421}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: pointerDownLeft
           m_Mode: 1
@@ -4178,7 +4178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &88531940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5582,7 +5582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06648bdf5b5505f409bafce50a3367a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!114 &115893882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6037,7 +6037,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444421}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: pointerUpJump
           m_Mode: 1
@@ -6053,7 +6053,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444421}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: jumpButton
           m_Mode: 1
@@ -8106,7 +8106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06648bdf5b5505f409bafce50a3367a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!114 &169486639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11552,6 +11552,7 @@ RectTransform:
   - {fileID: 1471996448}
   - {fileID: 1389454646}
   - {fileID: 1515266414}
+  - {fileID: 309450105}
   - {fileID: 1056362439}
   - {fileID: 1920674031}
   - {fileID: 1134019384}
@@ -11581,6 +11582,7 @@ MonoBehaviour:
   buttonMenuUnlock: {fileID: 1920674028}
   buttonnext: {fileID: 49509786}
   buttonMenu: {fileID: 1056362436}
+  buttonMenuLevel3: {fileID: 309450106}
 --- !u!114 &236838163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12362,7 +12364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &245507707
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13960,7 +13962,7 @@ MonoBehaviour:
   doorOpenSprite: {fileID: 434751366, guid: e9ede60d3393c6d4a8c1aca99948127b, type: 3}
   doorOpen: 0
   waitingToOpen: 0
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!61 &281346064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14933,6 +14935,139 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &309450104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 309450105}
+  - component: {fileID: 309450108}
+  - component: {fileID: 309450107}
+  - component: {fileID: 309450106}
+  m_Layer: 5
+  m_Name: ButtonMenuGameLevel3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &309450105
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309450104}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 236838161}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -13, y: -138.03009}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &309450106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309450104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 309450107}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: MenuGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &309450107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309450104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1926646858, guid: 9cced61f986d67f42ba9c98a57803d2c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &309450108
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309450104}
+  m_CullTransparentMesh: 1
 --- !u!1 &312385699
 GameObject:
   m_ObjectHideFlags: 0
@@ -16299,7 +16434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &336838526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18329,7 +18464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &365110152
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18623,7 +18758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &374449573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20005,7 +20140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &406876409
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22748,7 +22883,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444419}
           m_TargetAssemblyTypeName: PlayerPressButton, Assembly-CSharp
           m_MethodName: pointerDownButtonOpen
           m_Mode: 1
@@ -25409,7 +25544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &520024263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25535,7 +25670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &524834309
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36053,7 +36188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &724072812
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36410,7 +36545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &746218726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38569,7 +38704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &785892223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39335,9 +39470,9 @@ RectTransform:
   - {fileID: 1050038203}
   - {fileID: 1519057393}
   - {fileID: 333776285}
-  - {fileID: 1993058859}
   - {fileID: 2111293659}
   - {fileID: 17667027}
+  - {fileID: 1993058859}
   m_Father: {fileID: 1220977769}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42240,7 +42375,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444421}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: pointerUpRight
           m_Mode: 1
@@ -42256,7 +42391,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444421}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: pointerDownRight
           m_Mode: 1
@@ -43292,7 +43427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &886449552
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48893,7 +49028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &991773053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50482,7 +50617,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444418}
           m_TargetAssemblyTypeName: PlayerTelepoters, Assembly-CSharp
           m_MethodName: pointerDownEnterDoor
           m_Mode: 1
@@ -53764,7 +53899,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 236838161}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54247,7 +54382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &1078059924
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -56840,7 +56975,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 236838161}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -57130,7 +57265,7 @@ MonoBehaviour:
   doorOpenSprite: {fileID: 434751366, guid: e9ede60d3393c6d4a8c1aca99948127b, type: 3}
   doorOpen: 0
   waitingToOpen: 0
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!61 &1139138362
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57377,7 +57512,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1605444419}
           m_TargetAssemblyTypeName: PlayerPressButton, Assembly-CSharp
           m_MethodName: pointerDownButtonClose
           m_Mode: 1
@@ -58988,7 +59123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &1163141644
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -70393,7 +70528,7 @@ MonoBehaviour:
   doorOpenSprite: {fileID: 434751366, guid: e9ede60d3393c6d4a8c1aca99948127b, type: 3}
   doorOpen: 0
   waitingToOpen: 0
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!61 &1377644718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75621,7 +75756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &1529232024
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78847,7 +78982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06648bdf5b5505f409bafce50a3367a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!114 &1588663692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79404,7 +79539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a5f97681bebae4e89b6678b53ca447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!114 &1605444419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79459,20 +79594,20 @@ MonoBehaviour:
   - {fileID: 1606004485}
   orderedNode: []
   orderedNodeText:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 597507896}
+  - {fileID: 785712743}
+  - {fileID: 354887866}
+  - {fileID: 1050038204}
+  - {fileID: 1519057394}
+  - {fileID: 333776286}
+  - {fileID: 2111293660}
+  - {fileID: 17667028}
+  - {fileID: 1993058860}
   answer: GHBFAECDI
   keyFollowPoint: {fileID: 947388332}
   followingKey:
   - {fileID: 0}
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 236838162}
 --- !u!4 &1605444420
 Transform:
   m_ObjectHideFlags: 0
@@ -79505,7 +79640,7 @@ MonoBehaviour:
   speed: 7
   delayBeforeDoubleJump: 0
   verticalMove: 0
-  gameStarScreen: {fileID: 0}
+  gameStarScreen: {fileID: 1496421963}
 --- !u!70 &1605444422
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -80247,7 +80382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &1614251324
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -83287,7 +83422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06648bdf5b5505f409bafce50a3367a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!114 &1673029630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83935,7 +84070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &1681539842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89202,7 +89337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &1769185025
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95923,7 +96058,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 236838161}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -98850,7 +98985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &1987393873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99110,7 +99245,7 @@ GameObject:
   - component: {fileID: 1993058861}
   - component: {fileID: 1993058860}
   m_Layer: 5
-  m_Name: txt_7
+  m_Name: txt_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99129,7 +99264,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 804933473}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -101869,7 +102004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapsDamage: 1
-  healthManager: {fileID: 0}
+  healthManager: {fileID: 1306564810}
 --- !u!212 &2064471158
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -104366,7 +104501,7 @@ GameObject:
   - component: {fileID: 2111293661}
   - component: {fileID: 2111293660}
   m_Layer: 5
-  m_Name: txt_8
+  m_Name: txt_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104385,7 +104520,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 804933473}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -105114,7 +105249,7 @@ MonoBehaviour:
   doorOpenSprite: {fileID: 434751366, guid: e9ede60d3393c6d4a8c1aca99948127b, type: 3}
   doorOpen: 0
   waitingToOpen: 0
-  btnEnterDoor: {fileID: 0}
+  btnEnterDoor: {fileID: 1016141713}
 --- !u!61 &2132149483
 BoxCollider2D:
   m_ObjectHideFlags: 0

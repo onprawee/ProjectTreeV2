@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerPressButton : MonoBehaviour
@@ -21,6 +22,15 @@ public class PlayerPressButton : MonoBehaviour
     //GameOverScreen
     public GameOverScreen gameOverScreen;
 
+    //Last Scene Name
+    private string PreorderLv3 = "PreorderLevel3";
+    private string InorderLv3 = "InorderLevel3";
+    private string PostorderLv3 = "PostorderLevel3";
+
+    private Scene currentScene;
+
+
+
     void Start()
     {
         //Press&Close Button Light
@@ -38,6 +48,8 @@ public class PlayerPressButton : MonoBehaviour
         }
 
         orderedNode = new List<String>();
+
+        currentScene = SceneManager.GetActiveScene();
 
     }
 
@@ -74,6 +86,31 @@ public class PlayerPressButton : MonoBehaviour
 
                 gameOverScreen.buttonMenuUnlock.gameObject.SetActive(true);
                 gameOverScreen.buttonnext.gameObject.SetActive(true);
+                gameOverScreen.buttonMenuLevel3.gameObject.SetActive(false);
+
+                if (currentScene.name == PreorderLv3)
+                {
+                    Debug.Log("PreorderLv3");
+                    Debug.Log("Name :" + currentScene.name);
+                    gameOverScreen.buttonnext.gameObject.SetActive(false);
+                    gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
+                    gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
+
+                }
+                else if (currentScene.name == InorderLv3)
+                {
+                    gameOverScreen.buttonnext.gameObject.SetActive(false);
+                    gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
+                    gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
+                }
+                else if (currentScene.name == PostorderLv3)
+                {
+                    gameOverScreen.buttonnext.gameObject.SetActive(false);
+                    gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
+                    gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
+                }
+
+
             }
             else
             {

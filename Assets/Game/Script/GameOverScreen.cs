@@ -6,7 +6,7 @@ public class GameOverScreen : MonoBehaviour
 {
     public Text textStatus;
 
-    public Button buttonRestart, buttonMenuUnlock, buttonnext, buttonMenu;
+    public Button buttonRestart, buttonMenuUnlock, buttonnext, buttonMenu, buttonMenuLevel3;
 
     public void Setup(string txtstatus)
     {
