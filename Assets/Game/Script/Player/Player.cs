@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     public GameStarScreen gameStarScreen;
 
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -132,6 +131,8 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.up * jumpSpeed;
             Invoke("EnableDoubleJump", delayBeforeDoubleJump);
             anim.SetBool("isJumping", true);
+            AudioManager.instance.PlaySFX("Jump");
+
         }
         if (canDoubleJump)
         {
