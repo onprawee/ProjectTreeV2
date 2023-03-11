@@ -34,11 +34,13 @@ public class LevelPreorderManager : MonoBehaviour
 
     public void LoadLevel(int levelIndex)
     {
+        AudioManager.instance.PlaySFX("Click");
         SceneManager.LoadScene(levelIndex);
     }
 
     public void MenuHome()
     {
+        AudioManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("Menu_Home");
     }
 
