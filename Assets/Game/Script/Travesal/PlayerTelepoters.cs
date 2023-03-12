@@ -7,8 +7,10 @@ public class PlayerTelepoters : MonoBehaviour
 
     public Button btnEnterDoor;
 
+
     void Start()
     {
+
 
     }
 
@@ -18,19 +20,28 @@ public class PlayerTelepoters : MonoBehaviour
         {
             pointerDownEnterDoor();
         }
+
     }
 
     public void pointerDownEnterDoor()
     {
+        if (!btnEnterDoor.interactable)
+        {
+            return;
+        }
+
         if (currentTeleporter != null)
         {
+
             Teleporters teleporter = currentTeleporter.GetComponent<Teleporters>();
             transform.position = teleporter.GetDestination().position;
             AudioManager.instance.PlaySFX("Teleport");
 
             //Debug.Log("Teleporting");
         }
+
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -55,6 +66,6 @@ public class PlayerTelepoters : MonoBehaviour
             }
         }
 
-        // btnEnterDoor.gameObject.SetActive(false);
+        btnEnterDoor.interactable = false;
     }
 }

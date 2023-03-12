@@ -26,6 +26,8 @@ public class ExitDoor : MonoBehaviour
         {
 
             btnEnterDoor.gameObject.SetActive(true);
+
+            btnEnterDoor.interactable = true;
         }
     }
 

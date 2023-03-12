@@ -20,20 +20,21 @@ public class EntryDoor : MonoBehaviour
     {
         thePlayer = FindObjectOfType<PlayerPressButton>();
 
-        // btnEnterDoor = GameObject.Find("ButtonEnterDoor").GetComponent<Button>();
-
-        // btnEnterDoor.gameObject.SetActive(false);
         btnEnterDoor.interactable = false;
+
     }
 
     void Update()
     {
         if (waitingToOpen)
         {
+            btnEnterDoor.interactable = true;
+
             for (int i = 0; i < thePlayer.followingKey.Length; i++)
             {
                 if (thePlayer.followingKey[i] != null)
                 {
+
                     if (Vector3.Distance(thePlayer.followingKey[i].transform.position, transform.position) < 0.1f)
                     {
                         waitingToOpen = false;
@@ -49,6 +50,7 @@ public class EntryDoor : MonoBehaviour
                 }
             }
         }
+
     }
 
     // สคริปต์นี้ถูกใช้กับ Object ประตู
@@ -63,9 +65,9 @@ public class EntryDoor : MonoBehaviour
             {
                 if (thePlayer.followingKey[i] != null)
                 {
+
                     thePlayer.followingKey[i].followTarget = transform;
                     waitingToOpen = true;
-                    // btnEnterDoor.gameObject.SetActive(true);
                     btnEnterDoor.interactable = true;
                 }
             }
@@ -75,9 +77,12 @@ public class EntryDoor : MonoBehaviour
                 // btnEnterDoor.gameObject.SetActive(true);
                 btnEnterDoor.interactable = true;
             }
+
         }
 
     }
+
+
 }
 
 
