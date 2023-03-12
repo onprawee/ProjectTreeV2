@@ -13,7 +13,7 @@ public class LevelPostorderManager : MonoBehaviour
 
     void Start()
     {
-        inorderLevelUnlock = PlayerPrefs.GetInt("LevelsUnlockPostorder", 1) % 24;
+        inorderLevelUnlock = PlayerPrefs.GetInt("LevelsUnlockPostorder", 1) % 12;
         Debug.Log("LevelsUnlockPostorder" + inorderLevelUnlock);
 
         for (int i = 0; i < levelButtons.Length; i++)

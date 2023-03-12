@@ -6,9 +6,8 @@ public class GamePauseScreen : MonoBehaviour
 {
     public Button tutorialButton, questButton, exitButton, resumeButton;
 
-    public GameStarScreen gameStarScreen;
+    public GameStartScreen gameStartScreen;
     public TutorialDialogue tutorialDialogue;
-
 
     public void PauseScreenActive()
     {
@@ -29,7 +28,7 @@ public class GamePauseScreen : MonoBehaviour
     {
         //Quest
         AudioManager.instance.PlaySFX("Click");
-        gameStarScreen.Setup();
+        gameStartScreen.Setup();
         gameObject.SetActive(false);
 
         Debug.Log("Quest");

@@ -29,6 +29,8 @@ public class PlayerPressButton : MonoBehaviour
 
     private Scene currentScene;
 
+    private bool canInteract = false;
+
 
 
     void Start()
@@ -68,6 +70,18 @@ public class PlayerPressButton : MonoBehaviour
                 lightOff[i].SetActive(true);
                 lightOn[i].SetActive(false);
 
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (buttonClose.gameObject.activeSelf)
+            {
+                pointerDownButtonClose();
+            }
+            else
+            {
+                pointerDownButtonOpen();
             }
         }
 
@@ -132,31 +146,40 @@ public class PlayerPressButton : MonoBehaviour
     public void pointerDownButtonOpen()
     {
         //Debug.Log("you're press button idx" + nodeIndex);
-        button[nodeIndex].SetActive(false);
-        pressedButton[nodeIndex].SetActive(true);
+        if (canInteract)
+        {
+            button[nodeIndex].SetActive(false);
+            pressedButton[nodeIndex].SetActive(true);
 
-        //เพิ่มตัวอักษรลงใน List
-        string buttonName = pressedButton[nodeIndex].name;
-        string lastChar = buttonName.Substring(buttonName.Length - 1);
-        orderedNode.Add(lastChar);
-        AudioManager.instance.PlaySFX("Open_Close");
+            //เพิ่มตัวอักษรลงใน List
+            string buttonName = pressedButton[nodeIndex].name;
+            string lastChar = buttonName.Substring(buttonName.Length - 1);
+            orderedNode.Add(lastChar);
+            AudioManager.instance.PlaySFX("Open_Close");
 
-        displayNode();
+            displayNode();
+        }
+
     }
 
     public void pointerDownButtonClose()
     {
-        button[nodeIndex].SetActive(true);
-        pressedButton[nodeIndex].SetActive(false);
+        if (canInteract)
+        {
+            button[nodeIndex].SetActive(true);
+            pressedButton[nodeIndex].SetActive(false);
 
-        //ลบตัวอักษรออกจาก List
-        string buttonName = pressedButton[nodeIndex].name;
-        string lastChar = buttonName.Substring(buttonName.Length - 1);
-        orderedNode.Remove(lastChar);
-        AudioManager.instance.PlaySFX("Open_Close");
+            //ลบตัวอักษรออกจาก List
+            string buttonName = pressedButton[nodeIndex].name;
+            string lastChar = buttonName.Substring(buttonName.Length - 1);
+            orderedNode.Remove(lastChar);
+            AudioManager.instance.PlaySFX("Open_Close");
 
-        displayNode();
+            displayNode();
+        }
+
     }
+
 
     public void displayNode()
     {
@@ -180,6 +203,7 @@ public class PlayerPressButton : MonoBehaviour
 
         if (collision.CompareTag("NotPress"))
         {
+            canInteract = true;
             buttonOpen.gameObject.SetActive(true);
             buttonClose.gameObject.SetActive(false);
             nodeIndex = Array.FindIndex(button, x => x.gameObject.name == collision.gameObject.name);
@@ -187,14 +211,25 @@ public class PlayerPressButton : MonoBehaviour
         }
         else if (collision.CompareTag("Pressed"))
         {
+            canInteract = true;
             buttonClose.gameObject.SetActive(true);
+            buttonOpen.gameObject.SetActive(false);
             nodeIndex = Array.FindIndex(pressedButton, x => x.gameObject.name == collision.gameObject.name);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        buttonOpen.gameObject.SetActive(true);
-        buttonClose.gameObject.SetActive(true);
+
+        if (collision.CompareTag("NotPress"))
+        {
+            canInteract = false;
+
+        }
+        else if (collision.CompareTag("Pressed"))
+        {
+            canInteract = false;
+
+        }
     }
 }

@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     bool isGrounded, canDoubleJump;
     public float delayBeforeDoubleJump, verticalMove;
 
-    public GameStarScreen gameStarScreen;
+    public GamePauseScreen gamePauseScreen;
+    public GameStartScreen gameStartScreen;
 
 
     void Start()
@@ -37,13 +38,55 @@ public class Player : MonoBehaviour
         btnRight = GameObject.Find("ButtonRight").GetComponent<Button>();
         btnJump = GameObject.Find("ButtonJump").GetComponent<Button>();
 
-        gameStarScreen.Setup();
+        gameStartScreen.Setup();
 
 
     }
     void Update()
     {
         Movement();
+
+        onKeyDown();
+    }
+
+    void onKeyDown()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            pointerDownLeft();
+        }
+
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            pointerUpLeft();
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            pointerDownRight();
+        }
+
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            pointerUpRight();
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            jumpButton();
+        }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            pointerUpJump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gamePauseScreen.PauseScreenActive();
+        }
+
+
     }
 
     void Movement()

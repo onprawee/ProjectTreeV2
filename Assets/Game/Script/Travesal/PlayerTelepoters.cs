@@ -14,7 +14,10 @@ public class PlayerTelepoters : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            pointerDownEnterDoor();
+        }
     }
 
     public void pointerDownEnterDoor()
