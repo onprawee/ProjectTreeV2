@@ -11,8 +11,6 @@ public class TutorialDialogue : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(dialogueText.Length);
-
         currentDialogue = 0;
         dialogueText[currentDialogue].SetActive(true);
 

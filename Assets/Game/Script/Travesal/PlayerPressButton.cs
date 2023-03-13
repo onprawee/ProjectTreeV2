@@ -102,7 +102,7 @@ public class PlayerPressButton : MonoBehaviour
                 gameOverScreen.buttonnext.gameObject.SetActive(true);
                 gameOverScreen.buttonMenuLevel3.gameObject.SetActive(false);
 
-                if (currentScene.name == PreorderLv3)
+                if (currentScene.name == PreorderLv3 || currentScene.name == InorderLv3 || currentScene.name == PostorderLv3)
                 {
                     Debug.Log("PreorderLv3");
                     Debug.Log("Name :" + currentScene.name);
@@ -111,20 +111,6 @@ public class PlayerPressButton : MonoBehaviour
                     gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
 
                 }
-                else if (currentScene.name == InorderLv3)
-                {
-                    gameOverScreen.buttonnext.gameObject.SetActive(false);
-                    gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
-                    gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
-                }
-                else if (currentScene.name == PostorderLv3)
-                {
-                    gameOverScreen.buttonnext.gameObject.SetActive(false);
-                    gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
-                    gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
-                }
-
-
             }
             else
             {
@@ -133,6 +119,7 @@ public class PlayerPressButton : MonoBehaviour
                 gameOverScreen.buttonMenu.gameObject.SetActive(true);
 
                 gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
+                gameOverScreen.buttonMenuLevel3.gameObject.SetActive(false);
                 gameOverScreen.buttonnext.gameObject.SetActive(false);
             }
 

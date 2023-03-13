@@ -1,4 +1,6 @@
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -17,6 +19,15 @@ public class Player : MonoBehaviour
 
     public GamePauseScreen gamePauseScreen;
     public GameStartScreen gameStartScreen;
+
+    public TutorialGame tutorialGame;
+
+    private Scene currentScene;
+
+    //Scene Name
+    private string PreorderLv1 = "PreOrderLevel1";
+    private string InorderLv1 = "InorderLevel1";
+    private string PostorderLv1 = "PostorderLevel1";
 
 
     void Start()
@@ -38,7 +49,19 @@ public class Player : MonoBehaviour
         btnRight = GameObject.Find("ButtonRight").GetComponent<Button>();
         btnJump = GameObject.Find("ButtonJump").GetComponent<Button>();
 
-        gameStartScreen.Setup();
+        currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == PreorderLv1 || currentScene.name == InorderLv1 || currentScene.name == PostorderLv1)
+        {
+            tutorialGame.gameObject.SetActive(true);
+            Debug.Log("Tutorial");
+        }
+        else
+        {
+            Debug.Log("Not Tutorial");
+            tutorialGame.gameObject.SetActive(false);
+            gameStartScreen.Setup();
+        }
+
 
 
     }
