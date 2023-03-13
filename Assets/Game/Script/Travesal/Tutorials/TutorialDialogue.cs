@@ -46,6 +46,7 @@ public class TutorialDialogue : MonoBehaviour
         dialogueText[currentDialogue].SetActive(false);
         currentDialogue++;
         dialogueText[currentDialogue].SetActive(true);
+        AudioManager.instance.PlaySFX("Click");
     }
 
     public void PreviousDialogue()
@@ -53,6 +54,7 @@ public class TutorialDialogue : MonoBehaviour
         dialogueText[currentDialogue].SetActive(false);
         currentDialogue--;
         dialogueText[currentDialogue].SetActive(true);
+        AudioManager.instance.PlaySFX("Click");
     }
 
     public void CloseDialogue()
@@ -62,12 +64,14 @@ public class TutorialDialogue : MonoBehaviour
         dialogueText[currentDialogue].SetActive(false);
         currentDialogue = 0;
         dialogueText[currentDialogue].SetActive(true);
+        AudioManager.instance.PlaySFX("Click");
 
     }
 
     public void TutorialScene()
     {
         SceneManager.LoadScene("TutorialScene");
+        AudioManager.instance.PlaySFX("Click");
     }
 
 

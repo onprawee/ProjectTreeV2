@@ -46,12 +46,14 @@ public class TutorialGame : MonoBehaviour
         tutorialDialogue[currentDialogue].SetActive(false);
         currentDialogue++;
         tutorialDialogue[currentDialogue].SetActive(true);
+        AudioManager.instance.PlaySFX("Click");
     }
     public void SkipDialogue()
     {
         gameObject.SetActive(false);
         tutorialDialogue[currentDialogue].SetActive(false);
         gameStartScreen.Setup();
+        AudioManager.instance.PlaySFX("Click");
     }
 
     public void CloseDialogue()
@@ -59,6 +61,7 @@ public class TutorialGame : MonoBehaviour
         gameObject.SetActive(false);
         tutorialDialogue[currentDialogue].SetActive(false);
         gameStartScreen.Setup();
+        AudioManager.instance.PlaySFX("Click");
     }
 
 
