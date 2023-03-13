@@ -109,7 +109,7 @@ public class DialogueManager : MonoBehaviour
         var postObj = obj.postObject;
 
         // ซ่อนปุ่ม Next
-        var nextButton = GameObject.Find("NextText");
+        var nextButton = GameObject.Find("iconNext");
         nextButton.SetActive(false);
 
         //แสดงรูปภาพ ก่อนประโยค
