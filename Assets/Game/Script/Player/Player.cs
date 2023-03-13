@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
         btnRight = GameObject.Find("ButtonRight").GetComponent<Button>();
         btnJump = GameObject.Find("ButtonJump").GetComponent<Button>();
 
+    
         currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == PreorderLv1 || currentScene.name == InorderLv1 || currentScene.name == PostorderLv1)
         {

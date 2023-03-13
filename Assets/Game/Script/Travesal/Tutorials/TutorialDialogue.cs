@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TutorialDialogue : MonoBehaviour
@@ -31,6 +32,7 @@ public class TutorialDialogue : MonoBehaviour
         {
             nextButton.gameObject.SetActive(false);
             closeButton.gameObject.SetActive(true);
+
         }
         else
         {
@@ -61,6 +63,11 @@ public class TutorialDialogue : MonoBehaviour
         currentDialogue = 0;
         dialogueText[currentDialogue].SetActive(true);
 
+    }
+
+    public void TutorialScene()
+    {
+        SceneManager.LoadScene("TutorialScene");
     }
 
 
