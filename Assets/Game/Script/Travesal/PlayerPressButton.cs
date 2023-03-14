@@ -131,6 +131,12 @@ public class PlayerPressButton : MonoBehaviour
 
                     PlayerPrefs.SetInt("postorderIsPass", 1);
                 }
+                else if (currentScene.name == "TutorialScene")
+                {
+                    gameOverScreen.buttonnext.gameObject.SetActive(false);
+                    gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
+                    gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
+                }
             }
             else
             {
