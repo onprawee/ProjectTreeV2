@@ -34,6 +34,7 @@ public class HealthManager : MonoBehaviour
             gameOverScreen.buttonMenu.gameObject.SetActive(true);
             gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
             gameOverScreen.buttonnext.gameObject.SetActive(false);
+            gameOverScreen.iconlose.gameObject.SetActive(true);
         }
     }
 }

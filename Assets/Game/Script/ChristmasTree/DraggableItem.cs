@@ -83,7 +83,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             if (PlayerPrefs.GetInt("inorderIsPass") == 1)
             {
                 image.gameObject.SetActive(true);
-                Debug.Log("image2");
+                StartCoroutine(Animate());
             }
         }
         else if (image.name == "image3")
@@ -91,7 +91,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             if (PlayerPrefs.GetInt("postorderIsPass") == 1)
             {
                 image.gameObject.SetActive(true);
-                Debug.Log("image3");
+                StartCoroutine(Animate());
             }
         }
     }

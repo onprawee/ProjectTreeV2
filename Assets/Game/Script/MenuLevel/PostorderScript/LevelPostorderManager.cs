@@ -75,7 +75,8 @@ public class LevelPostorderManager : MonoBehaviour
 
     public void GetReward()
     {
-        PlayerPrefs.SetInt("rewardPorstorder", 1);
+        PlayerPrefs.SetInt("rewardPostorder", 1);
+        AudioManager.instance.PlaySFX("Click");
 
         rewardPanel.SetActive(false);
     }
