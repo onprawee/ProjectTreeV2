@@ -10,7 +10,10 @@ public class ButtonMenuGame : MonoBehaviour
     }
     //Game Traversal 
     //Menu Game Traversal => Menu Subject Traversal => Menu_Level => Game Page
-
+    public void Menu_Game()
+    {
+        SceneManager.LoadScene("Menu_Game");
+    }
     public void Menu_Decoration()
     {
         SceneManager.LoadScene("ChristmasTree");
