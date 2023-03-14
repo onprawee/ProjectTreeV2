@@ -42,7 +42,6 @@ public class LevelPreorderManager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetInt("rewardPreorder", 1);
             reward.interactable = true;
             Debug.Log("Reward is ready");
         }
@@ -75,7 +74,6 @@ public class LevelPreorderManager : MonoBehaviour
         Debug.Log("Get Reward");
 
         rewardPanel.SetActive(true);
-
 
     }
 

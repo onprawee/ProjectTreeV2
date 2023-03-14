@@ -39,7 +39,6 @@ public class LevelInorderManager : MonoBehaviour
         else
         {
             reward.interactable = true;
-            PlayerPrefs.SetInt("rewardInorder", 1);
 
         }
 

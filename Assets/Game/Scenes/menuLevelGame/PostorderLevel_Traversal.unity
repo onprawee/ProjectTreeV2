@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 380396247}
   - component: {fileID: 380396250}
   - component: {fileID: 380396249}
-  - component: {fileID: 380396248}
+  - component: {fileID: 380396251}
   m_Layer: 5
   m_Name: RewardIcon
   m_TagString: Untagged
@@ -736,24 +736,6 @@ RectTransform:
   m_AnchoredPosition: {x: 35.739822, y: 50}
   m_SizeDelta: {x: 297.2128, y: 297.2128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &380396248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380396246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f100c2dd7e70a4f9ddee0588cab2f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 380396249}
-  speed: 0.3
-  sprites:
-  - {fileID: -133800374, guid: 0f6c8f63dd29db249ad6516ab273608f, type: 3}
-  - {fileID: -1676818789, guid: 0f6c8f63dd29db249ad6516ab273608f, type: 3}
-  - {fileID: -1930774114, guid: 0f6c8f63dd29db249ad6516ab273608f, type: 3}
 --- !u!114 &380396249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,7 +756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -133800374, guid: 0f6c8f63dd29db249ad6516ab273608f, type: 3}
+  m_Sprite: {fileID: 1024966014, guid: c3fd839c4a9f0b341b2126ac80ae9062, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -792,6 +774,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380396246}
   m_CullTransparentMesh: 1
+--- !u!114 &380396251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380396246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fb0f33e07d6354f8f903bde0327cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 1024966014, guid: c3fd839c4a9f0b341b2126ac80ae9062, type: 3}
+  - {fileID: 356446778, guid: c3fd839c4a9f0b341b2126ac80ae9062, type: 3}
+  - {fileID: 538573818, guid: c3fd839c4a9f0b341b2126ac80ae9062, type: 3}
+  image: {fileID: 380396249}
 --- !u!1 &414108539
 GameObject:
   m_ObjectHideFlags: 0

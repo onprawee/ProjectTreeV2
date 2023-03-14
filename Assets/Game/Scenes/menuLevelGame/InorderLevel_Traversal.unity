@@ -1479,7 +1479,7 @@ GameObject:
   - component: {fileID: 1193958598}
   - component: {fileID: 1193958601}
   - component: {fileID: 1193958600}
-  - component: {fileID: 1193958599}
+  - component: {fileID: 1193958602}
   m_Layer: 5
   m_Name: RewardIcon
   m_TagString: Untagged
@@ -1507,18 +1507,6 @@ RectTransform:
   m_AnchoredPosition: {x: 35.739822, y: 50}
   m_SizeDelta: {x: 297.2128, y: 297.2128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1193958599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193958597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f100c2dd7e70a4f9ddee0588cab2f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1193958600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,6 +1545,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193958597}
   m_CullTransparentMesh: 1
+--- !u!114 &1193958602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193958597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fb0f33e07d6354f8f903bde0327cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: -133800374, guid: 0f6c8f63dd29db249ad6516ab273608f, type: 3}
+  - {fileID: -1676818789, guid: 0f6c8f63dd29db249ad6516ab273608f, type: 3}
+  - {fileID: -1930774114, guid: 0f6c8f63dd29db249ad6516ab273608f, type: 3}
+  image: {fileID: 1193958600}
 --- !u!1 &1227024162
 GameObject:
   m_ObjectHideFlags: 0
