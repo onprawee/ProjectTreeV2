@@ -4,9 +4,35 @@ using UnityEngine.UI;
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image image;
+
     [HideInInspector] public Transform parentAfterDrag;
 
     [HideInInspector] public InventorySlot inventorySlot;
+
+    void Start()
+    {
+        Debug.Log("Hello" + transform.name);
+        var parentName = PlayerPrefs.GetString(transform.name + ".parent");
+        Debug.Log(parentName);
+
+        var parent = GameObject.Find(parentName);
+
+        if (parent)
+        {
+            Debug.Log("Hi" + transform.name);
+            parentAfterDrag = parent.transform;
+            transform.SetParent(parent.transform);
+            transform.SetAsLastSibling();
+            image.raycastTarget = true;
+
+            if (parent.CompareTag("DecorateBox"))
+            {
+                inventorySlot = parent.GetComponent<InventorySlot>();
+                inventorySlot.gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            }
+        }
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
 

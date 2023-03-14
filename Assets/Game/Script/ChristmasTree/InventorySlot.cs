@@ -18,13 +18,14 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 Debug.Log("Decorated");
                 gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 0);
             }
-
-            
+            SavePositionImage(draggableItem);
         }
+    }
 
-
-
-
+    public void SavePositionImage(DraggableItem draggableItem)
+    {
+        PlayerPrefs.SetString(draggableItem.name + ".parent", draggableItem.parentAfterDrag.name);
+        Debug.Log("SavePositionImage: " + draggableItem.name + ".parent: " + draggableItem.parentAfterDrag.name);
     }
 
 }
