@@ -73,6 +73,11 @@ public class TutorialDialogue : MonoBehaviour
         SceneManager.LoadScene("TutorialScene");
         AudioManager.instance.PlaySFX("Click");
     }
+    public void Menu_Game()
+    {
+        SceneManager.LoadScene("Menu_Game");
+        AudioManager.instance.PlaySFX("Click");
+    }
 
 
 

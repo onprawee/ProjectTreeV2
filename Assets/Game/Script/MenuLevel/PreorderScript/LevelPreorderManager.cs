@@ -37,12 +37,25 @@ public class LevelPreorderManager : MonoBehaviour
         if (PlayerPrefs.GetInt("preorderIsPass") == 0)
         {
             reward.interactable = false;
+            PlayerPrefs.SetInt("rewardPreorder", 0);
+
         }
         else
         {
+            PlayerPrefs.SetInt("rewardPreorder", 1);
             reward.interactable = true;
+            Debug.Log("Reward is ready");
         }
 
+    }
+    void Update()
+    {
+        if (PlayerPrefs.GetInt("rewardPreorder") == 1)
+        {
+            //rewardPanel.SetActive(false);
+            reward.interactable = false;
+            Debug.Log("Reward is ready");
+        }
     }
 
     public void LoadLevel(int levelIndex)
@@ -63,16 +76,12 @@ public class LevelPreorderManager : MonoBehaviour
 
         rewardPanel.SetActive(true);
 
-        if (PlayerPrefs.GetInt("rewardInorder") == 1)
-        {
-            rewardPanel.SetActive(false);
-            reward.gameObject.SetActive(false);
-        }
+
     }
 
     public void GetReward()
     {
-        PlayerPrefs.SetInt("rewardInorder", 1);
+        PlayerPrefs.SetInt("rewardPreorder", 1);
 
         rewardPanel.SetActive(false);
     }

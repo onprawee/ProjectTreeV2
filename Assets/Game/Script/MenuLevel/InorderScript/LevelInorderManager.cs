@@ -34,13 +34,23 @@ public class LevelInorderManager : MonoBehaviour
         if (PlayerPrefs.GetInt("inorderIsPass") == 0)
         {
             reward.interactable = false;
+            PlayerPrefs.SetInt("rewardInorder", 0);
         }
         else
         {
             reward.interactable = true;
-        }
-        rewardPanel.SetActive(true);
+            PlayerPrefs.SetInt("rewardInorder", 1);
 
+        }
+
+    }
+    void Update()
+    {
+        if (PlayerPrefs.GetInt("rewardInorder") == 1)
+        {
+            reward.interactable = false;
+            Debug.Log("Reward is ready");
+        }
     }
 
     public void LoadLevel(int levelIndex)
@@ -62,11 +72,6 @@ public class LevelInorderManager : MonoBehaviour
 
         rewardPanel.SetActive(true);
 
-        if (PlayerPrefs.GetInt("rewardInorder") == 1)
-        {
-            rewardPanel.SetActive(false);
-            reward.gameObject.SetActive(false);
-        }
     }
 
     public void GetReward()
