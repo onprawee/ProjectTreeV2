@@ -13,24 +13,29 @@ public class ButtonMenuGame : MonoBehaviour
     public void Menu_Game()
     {
         SceneManager.LoadScene("Menu_Game");
+        AudioManager.instance.PlaySFX("Click");
     }
     public void Menu_Decoration()
     {
         SceneManager.LoadScene("ChristmasTree");
+        AudioManager.instance.PlaySFX("Click");
     }
 
     public void Subject_Traversal_Preorder()
     {
         SceneManager.LoadScene("PreorderLevel_Traversal");
+        AudioManager.instance.PlaySFX("Click");
     }
 
     public void Subject_Traversal_Inorder()
     {
         SceneManager.LoadScene("InorderLevel_Traversal");
+        AudioManager.instance.PlaySFX("Click");
     }
 
     public void Subject_Traversal_Postorder()
     {
         SceneManager.LoadScene("PostorderLevel_Traversal");
+        AudioManager.instance.PlaySFX("Click");
     }
 }

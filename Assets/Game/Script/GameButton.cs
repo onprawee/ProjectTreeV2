@@ -6,6 +6,7 @@ public class GameButton : MonoBehaviour
     public void ButtonBack()
     {
         SceneManager.LoadScene("Menu_Game");
+        
     }
 
     public void BackToMenu()
@@ -21,10 +22,4 @@ public class GameButton : MonoBehaviour
 
     }
 
-    //Load Scene Game ~
-    public void ButtonLevel1()
-    {
-        SceneManager.LoadScene("JigsawScene");
-        Debug.Log("Level 1");
-    }
 }

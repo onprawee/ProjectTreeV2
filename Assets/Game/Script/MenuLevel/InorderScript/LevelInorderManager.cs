@@ -76,6 +76,7 @@ public class LevelInorderManager : MonoBehaviour
     public void GetReward()
     {
         PlayerPrefs.SetInt("rewardInorder", 1);
+        AudioManager.instance.PlaySFX("Click");
 
         rewardPanel.SetActive(false);
     }

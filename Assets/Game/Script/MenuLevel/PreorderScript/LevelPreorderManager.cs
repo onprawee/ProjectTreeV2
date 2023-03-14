@@ -80,6 +80,7 @@ public class LevelPreorderManager : MonoBehaviour
     public void GetReward()
     {
         PlayerPrefs.SetInt("rewardPreorder", 1);
+        AudioManager.instance.PlaySFX("Click");
 
         rewardPanel.SetActive(false);
     }

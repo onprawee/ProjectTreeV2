@@ -27,6 +27,7 @@ public class ButtonHandler : MonoBehaviour
     public void ButtonMenuLearning()
     {
         SceneManager.LoadScene("Menu_Learn");
+
     }
 
     public void ButtonExit()
