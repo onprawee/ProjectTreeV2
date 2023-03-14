@@ -102,14 +102,34 @@ public class PlayerPressButton : MonoBehaviour
                 gameOverScreen.buttonnext.gameObject.SetActive(true);
                 gameOverScreen.buttonMenuLevel3.gameObject.SetActive(false);
 
-                if (currentScene.name == PreorderLv3 || currentScene.name == InorderLv3 || currentScene.name == PostorderLv3)
+                if (currentScene.name == PreorderLv3)
                 {
+
                     Debug.Log("PreorderLv3");
                     Debug.Log("Name :" + currentScene.name);
                     gameOverScreen.buttonnext.gameObject.SetActive(false);
                     gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
                     gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
 
+                    PlayerPrefs.SetInt("preorderIsPass", 1);
+
+                }
+                else if (currentScene.name == "InorderLevel3")
+                {
+                    gameOverScreen.buttonnext.gameObject.SetActive(false);
+                    gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
+                    gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
+
+                    PlayerPrefs.SetInt("inorderIsPass", 1);
+
+                }
+                else if (currentScene.name == "PostorderLevel3")
+                {
+                    gameOverScreen.buttonnext.gameObject.SetActive(false);
+                    gameOverScreen.buttonMenuLevel3.gameObject.SetActive(true);
+                    gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
+
+                    PlayerPrefs.SetInt("postorderIsPass", 1);
                 }
             }
             else

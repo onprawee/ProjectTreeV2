@@ -10,10 +10,12 @@ public class LevelInorderManager : MonoBehaviour
     public GameObject[] imageInorderLock;
     public GameObject[] textInorderLevel;
 
+    public GameObject rewardPanel;
+
+    public Button reward;
 
     void Start()
     {
-
         inorderLevelUnlock = PlayerPrefs.GetInt("LevelsUnlockInorder", 1) % 8;
         Debug.Log("LevelsUnlockInorder" + inorderLevelUnlock);
 
@@ -29,6 +31,15 @@ public class LevelInorderManager : MonoBehaviour
             imageInorderLock[i].SetActive(false);
             textInorderLevel[i].SetActive(true);
         }
+        if (PlayerPrefs.GetInt("inorderIsPass") == 0)
+        {
+            reward.interactable = false;
+        }
+        else
+        {
+            reward.interactable = true;
+        }
+        rewardPanel.SetActive(true);
 
     }
 
@@ -42,6 +53,27 @@ public class LevelInorderManager : MonoBehaviour
     {
         AudioManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("Menu_Home");
+    }
+
+    public void OpenRewardPanel()
+    {
+        AudioManager.instance.PlaySFX("Click");
+        Debug.Log("Get Reward");
+
+        rewardPanel.SetActive(true);
+
+        if (PlayerPrefs.GetInt("rewardInorder") == 1)
+        {
+            rewardPanel.SetActive(false);
+            reward.gameObject.SetActive(false);
+        }
+    }
+
+    public void GetReward()
+    {
+        PlayerPrefs.SetInt("rewardInorder", 1);
+
+        rewardPanel.SetActive(false);
     }
 
 }

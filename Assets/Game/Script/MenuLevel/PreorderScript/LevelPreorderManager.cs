@@ -8,6 +8,10 @@ public class LevelPreorderManager : MonoBehaviour
     public Button[] levelButtons;
     public GameObject[] imagePreorderLock;
     public GameObject[] textPreorderLevel;
+
+    public Button reward;
+
+    public GameObject rewardPanel;
     void Start()
     {
         //ต้อง Mod ด้วยจำนวน ที่ได้ค่าระหว่าง 1 - 3 (ตาม จำนวนของปุ่มที่มีอยู่ในหน้าเลือก Level)
@@ -30,6 +34,15 @@ public class LevelPreorderManager : MonoBehaviour
             textPreorderLevel[i].SetActive(true);
         }
 
+        if (PlayerPrefs.GetInt("preorderIsPass") == 0)
+        {
+            reward.interactable = false;
+        }
+        else
+        {
+            reward.interactable = true;
+        }
+
     }
 
     public void LoadLevel(int levelIndex)
@@ -42,6 +55,26 @@ public class LevelPreorderManager : MonoBehaviour
     {
         AudioManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("Menu_Home");
+    }
+    public void OpenRewardPanel()
+    {
+        AudioManager.instance.PlaySFX("Click");
+        Debug.Log("Get Reward");
+
+        rewardPanel.SetActive(true);
+
+        if (PlayerPrefs.GetInt("rewardInorder") == 1)
+        {
+            rewardPanel.SetActive(false);
+            reward.gameObject.SetActive(false);
+        }
+    }
+
+    public void GetReward()
+    {
+        PlayerPrefs.SetInt("rewardInorder", 1);
+
+        rewardPanel.SetActive(false);
     }
 
 

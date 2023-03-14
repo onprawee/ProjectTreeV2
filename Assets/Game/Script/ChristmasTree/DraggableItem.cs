@@ -1,6 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image image;
@@ -9,9 +11,13 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     [HideInInspector] public InventorySlot inventorySlot;
 
+    public Sprite[] sprites;
+    private float speed = 0.3f;
+
     void Start()
     {
-        Debug.Log("Hello" + transform.name);
+        checkStatus();
+
         var parentName = PlayerPrefs.GetString(transform.name + ".parent");
         Debug.Log(parentName);
 
@@ -19,7 +25,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         if (parent)
         {
-            Debug.Log("Hi" + transform.name);
             parentAfterDrag = parent.transform;
             transform.SetParent(parent.transform);
             transform.SetAsLastSibling();
@@ -58,6 +63,48 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
+    }
+
+    public void checkStatus()
+    {
+        image.gameObject.SetActive(false);
+        if (image.name == "image1")
+        {
+            if (PlayerPrefs.GetInt("preorderIsPass") == 1)
+            {
+                image.gameObject.SetActive(true);
+                Debug.Log("image1");
+                StartCoroutine(Animate());
+            }
+
+        }
+        else if (image.name == "image2")
+        {
+            if (PlayerPrefs.GetInt("inorderIsPass") == 1)
+            {
+                image.gameObject.SetActive(true);
+                Debug.Log("image2");
+            }
+        }
+        else if (image.name == "image3")
+        {
+            if (PlayerPrefs.GetInt("postorderIsPass") == 1)
+            {
+                image.gameObject.SetActive(true);
+                Debug.Log("image3");
+            }
+        }
+    }
+    IEnumerator Animate()
+    {
+        while (true)
+        {
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                image.sprite = sprites[i];
+                yield return new WaitForSeconds(speed);
+            }
+        }
     }
 }
 
