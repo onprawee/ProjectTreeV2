@@ -31,7 +31,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(parentAfterDrag);
-        PlayerPrefs
         image.raycastTarget = true;
     }
 }
