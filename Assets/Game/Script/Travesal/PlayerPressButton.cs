@@ -32,7 +32,6 @@ public class PlayerPressButton : MonoBehaviour
     private bool canInteract = false;
 
 
-
     void Start()
     {
         //Press&Close Button Light
@@ -102,6 +101,9 @@ public class PlayerPressButton : MonoBehaviour
                 gameOverScreen.buttonnext.gameObject.SetActive(true);
                 gameOverScreen.buttonMenuLevel3.gameObject.SetActive(false);
 
+                gameOverScreen.iconwin.gameObject.SetActive(true);
+                gameOverScreen.iconlose.gameObject.SetActive(false);
+
                 if (currentScene.name == PreorderLv3)
                 {
 
@@ -147,6 +149,10 @@ public class PlayerPressButton : MonoBehaviour
                 gameOverScreen.buttonMenuUnlock.gameObject.SetActive(false);
                 gameOverScreen.buttonMenuLevel3.gameObject.SetActive(false);
                 gameOverScreen.buttonnext.gameObject.SetActive(false);
+
+                gameOverScreen.iconwin.gameObject.SetActive(false);
+                gameOverScreen.iconlose.gameObject.SetActive(true);
+
             }
 
         }

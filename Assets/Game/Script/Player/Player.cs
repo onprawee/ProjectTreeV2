@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
 
     public TutorialGame tutorialGame;
 
-
     private Scene currentScene;
 
     //Scene Name
@@ -52,7 +51,7 @@ public class Player : MonoBehaviour
 
 
         currentScene = SceneManager.GetActiveScene();
-        if (currentScene.name == PreorderLv1 || currentScene.name == InorderLv1 || currentScene.name == PostorderLv1)
+        if (currentScene.name == PreorderLv1 || currentScene.name == InorderLv1 || currentScene.name == PostorderLv1 || currentScene.name == "TutorialScene")
         {
             tutorialGame.gameObject.SetActive(true);
             Debug.Log("Tutorial");
