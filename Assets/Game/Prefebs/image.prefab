@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 6454551882946516728}
   - component: {fileID: 6454551882946516731}
   - component: {fileID: 6454551882946516729}
+  - component: {fileID: 7050115477413513411}
   m_Layer: 5
-  m_Name: gift1
+  m_Name: image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,3 +92,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 6454551882946516731}
   parentAfterDrag: {fileID: 0}
+  inventorySlot: {fileID: 0}
+--- !u!114 &7050115477413513411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454551882946516229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f100c2dd7e70a4f9ddee0588cab2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  speed: 1
+  sprites: []

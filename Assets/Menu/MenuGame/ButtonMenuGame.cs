@@ -11,6 +11,11 @@ public class ButtonMenuGame : MonoBehaviour
     //Game Traversal 
     //Menu Game Traversal => Menu Subject Traversal => Menu_Level => Game Page
 
+    public void Menu_Decoration()
+    {
+        SceneManager.LoadScene("ChristmasTree");
+    }
+
     public void Subject_Traversal_Preorder()
     {
         SceneManager.LoadScene("PreorderLevel_Traversal");

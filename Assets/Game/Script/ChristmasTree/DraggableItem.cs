@@ -9,33 +9,29 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public InventorySlot inventorySlot;
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnBeginDrag");
+
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         image.raycastTarget = false;
 
-
+        AudioManager.instance.PlaySFX("Click");
         if (parentAfterDrag.CompareTag("DecorateBox"))
         {
             inventorySlot = parentAfterDrag.GetComponent<InventorySlot>();
             inventorySlot.gameObject.GetComponent<Image>().color = new Color(255, 255, 255, 255);
         }
-
-
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnDrag");
         transform.position = eventData.position;
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnEndDrag");
         transform.SetParent(parentAfterDrag);
+        PlayerPrefs
         image.raycastTarget = true;
     }
 }

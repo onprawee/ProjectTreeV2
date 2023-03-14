@@ -13,7 +13,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             DraggableItem draggableItem = droppedItem.GetComponent<DraggableItem>();
             draggableItem.parentAfterDrag = transform;
 
-            // decorated = true;
             if (CompareTag("DecorateBox"))
             {
                 Debug.Log("Decorated");
