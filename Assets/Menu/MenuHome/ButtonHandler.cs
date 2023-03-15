@@ -32,7 +32,7 @@ public class ButtonHandler : MonoBehaviour
 
     public void ButtonExit()
     {
-        Debug.Log("Exit !");
+        Application.Quit();
     }
 
     //Button Menu 

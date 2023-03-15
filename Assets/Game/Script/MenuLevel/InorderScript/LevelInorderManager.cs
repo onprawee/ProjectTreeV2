@@ -58,10 +58,10 @@ public class LevelInorderManager : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
     }
 
-    public void MenuHome()
+    public void Menu_Game()
     {
         AudioManager.instance.PlaySFX("Click");
-        SceneManager.LoadScene("Menu_Home");
+        SceneManager.LoadScene("Menu_Game");
     }
 
     public void OpenRewardPanel()
