@@ -70,7 +70,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.gameObject.SetActive(false);
         if (image.name == "image1")
         {
-            if (PlayerPrefs.GetInt("preorderIsPass") == 1)
+            if (PlayerPrefs.GetInt("rewardPreorder") == 1)
             {
                 image.gameObject.SetActive(true);
                 Debug.Log("image1");
@@ -80,7 +80,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
         else if (image.name == "image2")
         {
-            if (PlayerPrefs.GetInt("inorderIsPass") == 1)
+            if (PlayerPrefs.GetInt("rewardInorder") == 1)
             {
                 image.gameObject.SetActive(true);
                 StartCoroutine(Animate());
@@ -88,7 +88,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
         else if (image.name == "image3")
         {
-            if (PlayerPrefs.GetInt("postorderIsPass") == 1)
+            if (PlayerPrefs.GetInt("rewardPostorder") == 1)
             {
                 image.gameObject.SetActive(true);
                 StartCoroutine(Animate());
