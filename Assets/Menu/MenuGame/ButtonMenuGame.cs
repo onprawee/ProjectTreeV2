@@ -2,8 +2,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
+
 public class ButtonMenuGame : MonoBehaviour
 {
+    public GameObject dialoguePage;
+    void Start()
+    {
+        // PlayerPrefs.SetInt("cutSceneOpen", (cutSceneIsOpen) ? 1 : 0);
+
+        if (PlayerPrefs.GetInt("menudialogue") == 0)
+        {
+            Debug.Log("menu dialogue");
+            dialoguePage.SetActive(true);
+        }
+        else
+        {
+            dialoguePage.SetActive(false);
+        }
+    }
     public void ButtonMenuHome()
     {
         SceneManager.LoadScene("Menu_Home");
@@ -37,5 +53,11 @@ public class ButtonMenuGame : MonoBehaviour
     {
         SceneManager.LoadScene("PostorderLevel_Traversal");
         AudioManager.instance.PlaySFX("Click");
+    }
+
+    public void closeMenuDialogue()
+    {
+        dialoguePage.SetActive(false);
+        PlayerPrefs.SetInt("menudialogue", 1);
     }
 }
