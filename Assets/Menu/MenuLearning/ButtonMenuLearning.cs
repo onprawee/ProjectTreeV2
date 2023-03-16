@@ -9,8 +9,7 @@ public class ButtonMenuLearning : MonoBehaviour
     public void ButtonTreedata()
     {
         AudioManager.instance.PlaySFX("Click");
-        //SceneManager.LoadScene("treedata");
-        SceneManager.LoadScene("test");
+        SceneManager.LoadScene("treedata");
     }
     public void ButtonBinaryTree()
     {

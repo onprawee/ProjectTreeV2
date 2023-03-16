@@ -14,11 +14,13 @@ public class DialogButtonless : MonoBehaviour
     // Start is called before the first frame update
     public void buttonMenuLearn()
     {
+        AudioManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("Menu_Learn");
     }
     // Update is called once per frame
    public void buttonNextLevel()
     {
+        AudioManager.instance.PlaySFX("Click");
        SceneManager.LoadScene(scene);
         // SceneManager.LoadScene("บทถัดไป");
         Debug.Log("Next Level");

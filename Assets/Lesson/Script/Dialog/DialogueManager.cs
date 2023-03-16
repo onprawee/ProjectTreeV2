@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
+        AudioManager.instance.PlaySFX("Click");
         //ถ้าไม่มี ข้อความเหลืออยู่ในคิว : จะปิด Dialog 
         if (dialogueObjects.Count == 0)
         {
