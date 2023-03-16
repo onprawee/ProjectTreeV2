@@ -178,6 +178,8 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Trap")
         {
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isJumping", false);
             anim.SetBool("isHurt", true);
         }
     }
