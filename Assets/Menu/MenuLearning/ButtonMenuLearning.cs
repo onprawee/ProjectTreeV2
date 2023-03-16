@@ -26,6 +26,11 @@ public class ButtonMenuLearning : MonoBehaviour
         AudioManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("expression tree");
     }
+    public void ButtonApply()
+    {
+        AudioManager.instance.PlaySFX("Click");
+        SceneManager.LoadScene("apply");
+    }
 
     public void ButtonHome()
     {
