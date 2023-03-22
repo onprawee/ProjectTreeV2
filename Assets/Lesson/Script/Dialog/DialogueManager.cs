@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-
-    //Class Dialog
     public Dialogue dialogue;
 
     public Text textSentence;
@@ -45,21 +43,33 @@ public class DialogueManager : MonoBehaviour
             SceneManager.LoadScene(scene);
             return;
         }
+
         //ซ่อนรูปภาพที่กำลังแสดงอยู่
         var dialogueObjects = dialogue.dialogueObjects[currentIndex];
+
+
         for (int i = 0; i < dialogueObjects.preObject.Length; i++)
         {
-            dialogueObjects.preObject[i].gameObject.SetActive(false);
+            if (dialogueObjects.preObject[i].isForever == false)
+            {
+                dialogueObjects.preObject[i].gameObject.SetActive(false);
+            }
+
         }
         for (int i = 0; i < dialogueObjects.postObject.Length; i++)
         {
-            dialogueObjects.postObject[i].gameObject.SetActive(false);
+            if (dialogueObjects.postObject[i].isForever == false)
+            {
+                dialogueObjects.postObject[i].gameObject.SetActive(false);
+            }
+
         }
 
         Debug.Log(currentIndex);
         // อัปเดตจำนวน Index ของ Array 
 
         currentIndex++;
+
         dialogueObjects = dialogue.dialogueObjects[currentIndex];
 
         // เรียกใช้ Coroutine ในการแสดงข้อความ
@@ -100,8 +110,6 @@ public class DialogueManager : MonoBehaviour
         var sentence = dialogueObject.sentence;
         var PreImage = dialogueObject.preObject;
         var PostImage = dialogueObject.postObject;
-
-
 
         previousButton.SetActive(false);
         nextButton.SetActive(false);
