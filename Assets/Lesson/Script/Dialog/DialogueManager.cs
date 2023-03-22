@@ -1,149 +1,144 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class DialogueManager : MonoBehaviour
 {
-    
-    public Text dialogueText;
-    // Queue : FIFO => First In Fist Out 
-    private Queue<DialogueObject> dialogueObjects;
 
     //Class Dialog
     public Dialogue dialogue;
 
-    //Type Effect delay
+    public Text textSentence;
+
+    private int currentIndex = 0;
     public float delay = 0.1f;
-    public string SceneB;
-    //private Scene scene;
+
     private int scene;
 
-    public CustomGameObject[] previousPreObj; // ใช้สำหรับเก็บรายการรูปภาพก่อนประโยคที่กำลังแสดงอยู่ เพื่อใช้สำหรับซ่อนรูปภาพเหล่านั้นในการกดปุ่ม Next ครั้งถัดไป
-
-    public CustomGameObject[] previousPostObj; // ใช้สำหรับเก็บรายการรูปภาพหลังประโยคที่กำลังแสดงอยู่ เพื่อใช้สำหรับซ่อนรูปภาพเหล่านั้นในการกดปุ่ม Next ครั้งถัดไป
-
+    public GameObject nextButton, previousButton;
 
     void Start()
     {
-        dialogueObjects = new Queue<DialogueObject>();
-
-        //Show First text In Array 
-        StartDialogue(dialogue);
+        StartDialogue();
         scene = SceneManager.GetActiveScene().buildIndex + 1;
     }
-    private void StartDialogue(Dialogue dialogue)
+
+    private void StartDialogue()
     {
-        dialogueObjects.Clear();
-        //ข้อความอธิบายทั้งหมดถูกเก็บไว้ใน Array => public Dialogue dialogue;
-        //ทำการ วน Loop เพื่อดึงข้อความอธิบายเข้ามาใส่ใน Queue ทีละตัว => private Queue<string> sentences;
-        foreach (var obj in dialogue.dialogueObjects)
-        {
-            var dialogObj = new DialogueObject();
-            dialogObj.preObject = obj.preObject;
-            dialogObj.sentence = obj.sentence;
-            dialogObj.postObject = obj.postObject;
+        textSentence.text = "";
+        currentIndex = 0;
+        var dialogueObjects = dialogue.dialogueObjects[currentIndex];
 
-            dialogueObjects.Enqueue(dialogObj);
-        }
+        StopAllCoroutines();
 
-        DisplayNextSentence();
+        StartCoroutine(TypeSentence(dialogueObjects));
+
     }
-    public void DisplayNextSentence()
+
+    public void NextSentence()
     {
-        AudioManager.instance.PlaySFX("Click");
-        //ถ้าไม่มี ข้อความเหลืออยู่ในคิว : จะปิด Dialog 
-        if (dialogueObjects.Count == 0)
+        if (currentIndex == dialogue.dialogueObjects.Length - 1)
         {
-            SceneManager.LoadScene(scene);
             Debug.Log("i'm on the next level ");
+            SceneManager.LoadScene(scene);
             return;
         }
-
-        // ซ่อนรูปภาพก่อนประโยค ที่กำลังแสดงอยู่
-        if (previousPreObj != null)
+        //ซ่อนรูปภาพที่กำลังแสดงอยู่
+        var dialogueObjects = dialogue.dialogueObjects[currentIndex];
+        for (int i = 0; i < dialogueObjects.preObject.Length; i++)
         {
-            for (int i = 0; i < previousPreObj.Length; i++)
-            {
-                // ถ้ารูปภาพ ไม่ได้ตั้งค่า isForever = true ให้ซ่อนรูปภาพ
-                if (!previousPreObj[i].isForever)
-                {
-                    previousPreObj[i].gameObject.SetActive(false); // ซ่อนรูป
-                }
-            }
-            previousPreObj = null; // ล้างข้อมูลรูปภาพที่แสดงอยู่ก่อนหน้า
+            dialogueObjects.preObject[i].gameObject.SetActive(false);
+        }
+        for (int i = 0; i < dialogueObjects.postObject.Length; i++)
+        {
+            dialogueObjects.postObject[i].gameObject.SetActive(false);
         }
 
-        // ซ่อนรูปภาพหลังประโยค ที่กำลังแสดงอยู่
-        if (previousPostObj != null)
-        {
-            for (int i = 0; i < previousPostObj.Length; i++)
-            {
-                // ถ้ารูปภาพ ไม่ได้ตั้งค่า isForever = true ให้ซ่อนรูปภาพ
-                if (!previousPostObj[i].isForever)
-                {
-                    previousPostObj[i].gameObject.SetActive(false); // ซ่อนรูป
-                }
-            }
-            previousPostObj = null; // ล้างข้อมูลรูปภาพที่แสดงอยู่ก่อนหน้า
-        }
+        Debug.Log(currentIndex);
+        // อัปเดตจำนวน Index ของ Array 
 
-        //กรณีที่มีข้อความเหลืออยู่ จะทำการดึงข้อความนั้นออกมาจากคิว  แล้วเอาไปใส่ในตัวแปร sentence 
-        var obj = dialogueObjects.Dequeue();
+        currentIndex++;
+        dialogueObjects = dialogue.dialogueObjects[currentIndex];
 
-        StopAllCoroutines(); //หยุดฟังก์ชันทั้งหมดที่ทำงานอยู่
+        // เรียกใช้ Coroutine ในการแสดงข้อความ
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(dialogueObjects));
 
-        //เรียกใช้ฟังก์ชัน TypeSentence(sentence) ทำงาน 
-        StartCoroutine(TypeSentence(obj));
-        Debug.Log("Dequeue : ");
     }
-    IEnumerator TypeSentence(DialogueObject obj)
+
+    public void PreviousSentence()
     {
-        // ล้างข้อความก่อนหน้า
-        dialogueText.text = "";
+        //ซ่อนรูปภาพที่กำลังแสดงอยู่
+        var dialogueObjects = dialogue.dialogueObjects[currentIndex];
+        for (int i = 0; i < dialogueObjects.preObject.Length; i++)
+        {
+            dialogueObjects.preObject[i].gameObject.SetActive(false);
+        }
+        for (int i = 0; i < dialogueObjects.postObject.Length; i++)
+        {
+            dialogueObjects.postObject[i].gameObject.SetActive(false);
+        }
 
-        // ดึงข้อมูลที่จะแสดงมาจาก obj
-        var preObj = obj.preObject;
-        var sentence = obj.sentence;
-        var postObj = obj.postObject;
+        //อัปเดตจำนวน Index ของ Array 
+        currentIndex--;
 
-        // ซ่อนปุ่ม Next
-        var nextButton = GameObject.Find("iconNext");
+        dialogueObjects = dialogue.dialogueObjects[currentIndex];
+
+        Debug.Log(currentIndex);
+
+        //เรียกใช้ Coroutine ในการแสดงข้อความ
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(dialogueObjects));
+    }
+
+    IEnumerator TypeSentence(DialogueObject dialogueObject)
+    {
+        textSentence.text = "";
+
+        var sentence = dialogueObject.sentence;
+        var PreImage = dialogueObject.preObject;
+        var PostImage = dialogueObject.postObject;
+
+
+
+        previousButton.SetActive(false);
         nextButton.SetActive(false);
 
-        //แสดงรูปภาพ ก่อนประโยค
-        if (preObj != null)
+        if (PreImage != null)
         {
-            foreach (var pObj in preObj)
+            foreach (var item in PreImage)
             {
-                pObj.gameObject.SetActive(true); // แสดงรูปภาพ
+                item.gameObject.SetActive(true);
             }
-            previousPreObj = preObj; // เก็บ รูปภาพก่อนประโยคทั้งหมดของประโยคนี้ ไว้ในตัวแปรนี้ 
-                                     // เพื่อที่จะใช้ในการซ่อนรูปภาพเหล่านี้ในอนาคต
         }
 
-        // แสดงประโยค
-        // ลูปเพื่อแสดงตัวอักษรของประโยคนี้ ทีละตัวอักษร
-        foreach (char letter in sentence.ToCharArray())
+        foreach (char letter in dialogueObject.sentence.ToCharArray())
         {
-            dialogueText.text += letter;
+            textSentence.text += letter;
             yield return new WaitForSeconds(delay);
+
         }
 
-        // แสดงรูปภาพ หลังประโยค
-        if (postObj != null)
+        if (PostImage != null)
         {
-            foreach (var objP in postObj)
+            foreach (var item in PostImage)
             {
-                objP.gameObject.SetActive(true); // แสดงรูปภาพ
+                item.gameObject.SetActive(true);
             }
-            previousPostObj = postObj; // เก็บ รูปภาพหลังประโยคทั้งหมดของประโยคนี้ ไว้ในตัวแปรนี้
-                                       // เพื่อที่จะใช้ในการซ่อนรูปภาพเหล่านี้ในอนาคต
         }
 
-        // แสดงปุ่ม Next
         nextButton.SetActive(true);
+
+        if (currentIndex == 0)
+        {
+            previousButton.SetActive(false);
+        }
+        else
+        {
+            previousButton.SetActive(true);
+        }
     }
+
 }
