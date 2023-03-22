@@ -37,6 +37,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextSentence()
     {
+        AudioManager.instance.PlaySFX("Click");
         if (currentIndex == dialogue.dialogueObjects.Length - 1)
         {
             Debug.Log("i'm on the next level ");
@@ -80,6 +81,7 @@ public class DialogueManager : MonoBehaviour
 
     public void PreviousSentence()
     {
+        AudioManager.instance.PlaySFX("Click");
         //ซ่อนรูปภาพที่กำลังแสดงอยู่
         var dialogueObjects = dialogue.dialogueObjects[currentIndex];
         for (int i = 0; i < dialogueObjects.preObject.Length; i++)
