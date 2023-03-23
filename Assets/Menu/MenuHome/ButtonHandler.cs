@@ -26,6 +26,7 @@ public class ButtonHandler : MonoBehaviour
     }
     public void ButtonMenuLearning()
     {
+        AudioManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("Menu_Learn");
 
     }
